@@ -2,6 +2,8 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.2.
 This application is to help golfers practice successfully using various scenarios that they may encounter in the golf course.
+The aim of this project is practice like musicians. Instead of mindlessly swinging a golf club multiple times, the golfer 
+will use different golf clubs and strategies in various situations.
 
 ## Development server
 
