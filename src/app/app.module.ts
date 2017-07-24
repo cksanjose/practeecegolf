@@ -4,17 +4,26 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { PracticeComponent } from './practice/practice.component';
+import { SkillLevelComponent } from './skill-level/skill-level.component';
+import { GolfHoleComponent } from './golf-hole/golf-hole.component';
+import {GolfHoleService} from "./golf-hole/golf-hole.service";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PracticeComponent,
+    SkillLevelComponent,
+    GolfHoleComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [
+    GolfHoleService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

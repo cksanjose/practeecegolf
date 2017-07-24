@@ -1,6 +1,7 @@
 # Practeecegolf
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.2.
+This application is to help golfers practice successfully using various scenarios that they may encounter in the golf course.
 
 ## Development server
 
