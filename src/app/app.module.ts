@@ -11,11 +11,9 @@ import { GolfHoleService } from "./golf-hole/golf-hole.service";
 import { PathNotFoundComponent } from './shared/path-not-found/path-not-found.component';
 import { RouterModule, Routes } from "@angular/router";
 import { NoopAnimationsModule } from "@angular/platform-browser/animations";
-import { HomeComponent } from './home/home.component';
-import { MatCardModule } from '@angular/material';
 
 const appRoutes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: '', component: AppComponent },
   { path: 'practice', component: PracticeComponent },
   { path: '**', component: PathNotFoundComponent }
 ];
@@ -26,15 +24,13 @@ const appRoutes: Routes = [
     PracticeComponent,
     SkillLevelComponent,
     GolfHoleComponent,
-    PathNotFoundComponent,
-    HomeComponent
+    PathNotFoundComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     RouterModule.forRoot(appRoutes, { enableTracing: true }),
-    MatCardModule,
     NoopAnimationsModule
   ],
   providers: [
@@ -42,9 +38,6 @@ const appRoutes: Routes = [
   ],
   bootstrap: [
     AppComponent
-  ],
-  exports: [
-    MatCardModule
   ]
 })
 export class AppModule { }
