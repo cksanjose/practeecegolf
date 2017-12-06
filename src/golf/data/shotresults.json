@@ -1,42 +1,44 @@
-{
+[
+  {
 	"ShotResultId": 1,
 	"ShotType": "Fairway",
 	"Result": "Ball in the middle of the fairway",
 	"DistanceToGreen": 0
-},
-{
-	"ShotResultId": 2,
-	"ShotType": "Rough",
-	"Result": "Ball in the rough",
-	"DistanceToGreen": 0
-},
-{
-	"ShotResultId": 3,
-	"ShotType": "Chip Out",
-	"Result": "Ball in the trees",
-	"DistanceToGreen": 0
-},
-{
-	"ShotResultId": 4,
-	"ShotType": "Putt",
-	"Result": "Ball on the green",
-	"DistanceToGreen": 0
-},
-{
-	"ShotResultId": 5,
-	"ShotType": "Bunker",
-	"Result": "Ball in the fairway bunker",
-	"DistanceToGreen": 0
-},
-{
-	"ShotResultId": 6,
-	"ShotType": "Bunker",
-	"Result": "Ball in the green-side bunker",
-	"DistanceToGreen": 0
-},
-{
-	"ShotResultId": 7,
-	"ShotType": "Chip",
-	"Result": "Ball in the green-side rough",
-	"DistanceToGreen": 0
-}
+  },
+  {
+    "ShotResultId": 2,
+    "ShotType": "Rough",
+    "Result": "Ball in the rough",
+    "DistanceToGreen": 0
+  },
+  {
+    "ShotResultId": 3,
+    "ShotType": "Chip Out",
+    "Result": "Ball in the trees",
+    "DistanceToGreen": 0
+  },
+  {
+    "ShotResultId": 4,
+    "ShotType": "Putt",
+    "Result": "Ball on the green",
+    "DistanceToGreen": 0
+  },
+  {
+    "ShotResultId": 5,
+    "ShotType": "Bunker",
+    "Result": "Ball in the fairway bunker",
+    "DistanceToGreen": 0
+  },
+  {
+    "ShotResultId": 6,
+    "ShotType": "Bunker",
+    "Result": "Ball in the green-side bunker",
+    "DistanceToGreen": 0
+  },
+  {
+    "ShotResultId": 7,
+    "ShotType": "Chip",
+    "Result": "Ball in the green-side rough",
+    "DistanceToGreen": 0
+  }
+]

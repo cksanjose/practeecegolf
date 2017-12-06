@@ -1,160 +1,162 @@
-{
-	"HoleId": 1,
-	"Distance": 510,
-	"Par": 5,
-	"Skill": "Advance",
-	"Hazard": "None",
-	"AverageSwingsToGreen": 4
-},
-{
-	"HoleId": 2,
-	"Distance": 450,
-	"Par": 5,
-	"Skill": "Intermediate",
-	"Hazard": "None",
-	"AverageSwingsToGreen": 5
-},
-{
-	"HoleId": 3,
-	"Distance": 450,
-	"Par": 5,
-	"Skill": "Advance",
-	"Hazard": "Multiple bunkers in the fairway",
-	"AverageSwingsToGreen": 4
-},
-{
-	"HoleId": 4,
-	"Distance": 410,
-	"Par": 5,
-	"Skill": "Intermediate",
-	"Hazard": "Multiple bunkers in the fairway",
-	"AverageSwingsToGreen": 5
-},
-{
-	"HoleId": 5,
-	"Distance": 350,
-	"Par": 5,
-	"Skill": "Beginner",
-	"Hazard": "Multiple bunkers in the fairway",
-	"AverageSwingsToGreen": 6
-},
-{
-	"HoleId": 6,
-	"Distance": 410,
-	"Par": 4,
-	"Skill": "Advance",
-	"Hazard": "Wooded fairway",
-	"AverageSwingsToGreen": 3
-},
-{
-	"HoleId": 7,
-	"Distance": 350,
-	"Par": 4,
-	"Skill": "Intermediate",
-	"Hazard": "Wooded fairway",
-	"AverageSwingsToGreen": 4
-},
-{
-	"HoleId": 8,
-	"Distance": 290,
-	"Par": 4,
-	"Skill": "Beginner",
-	"Hazard": "Wooded fairway",
-	"AverageSwingsToGreen": 5
-},
-{
-	"HoleId": 9,
-	"Distance": 320,
-	"Par": 4,
-	"Skill": "Advance",
-	"Hazard": "None",
-	"AverageSwingsToGreen": 2
-},
-{
-	"HoleId": 10,
-	"Distance": 290,
-	"Par": 4,
-	"Skill": "Intermediate",
-	"Hazard": "None",
-	"AverageSwingsToGreen": 3
-},
-{
-	"HoleId": 11,
-	"Distance": 230,
-	"Par": 4,
-	"Skill": "Beginner",
-	"Hazard": "None",
-	"AverageSwingsToGreen": 4
-},
-{
-	"HoleId": 12,
-	"Distance": 185,
-	"Par": 3,
-	"Skill": "Advance",
-	"Hazard": "Water around the green",
-	"AverageSwingsToGreen": 1
-},
-{
-	"HoleId": 13,
-	"Distance": 165,
-	"Par": 3,
-	"Skill": "Intermediate",
-	"Hazard": "Water around the green",
-	"AverageSwingsToGreen": 2
-},
-{
-	"HoleId": 14,
-	"Distance": 120,
-	"Par": 3,
-	"Skill": "Beginner",
-	"Hazard": "Water around the green",
-	"AverageSwingsToGreen": 3
-},
-{
-	"HoleId": 15,
-	"Distance": 165,
-	"Par": 3,
-	"Skill": "Advance",
-	"Hazard": "Bunkers around the green",
-	"AverageSwingsToGreen": 1
-},
-{
-	"HoleId": 16,
-	"Distance": 145,
-	"Par": 3,
-	"Skill": "Intermediate",
-	"Hazard": "Bunkers around the green",
-	"AverageSwingsToGreen": 2
-},
-{
-	"HoleId": 17,
-	"Distance": 105,
-	"Par": 3,
-	"Skill": "Beginner",
-	"Hazard": "Bunkers around the green",
-	"AverageSwingsToGreen": 3
-},
-{
-	"HoleId": 18,
-	"Distance": 385,
-	"Par": 5,
-	"Skill": "Advance",
-	"Hazard": "Water in the fairway",
-	"AverageSwingsToGreen": 2
-},
-{
-	"HoleId": 19,
-	"Distance": 355,
-	"Par": 5,
-	"Skill": "Intermediate",
-	"Hazard": "Water in the fairway",
-	"AverageSwingsToGreen": 3
-},
-{
-	"HoleId": 20,
-	"Distance": 300,
-	"Par": 5,
-	"Skill": "Beginner",
-	"Hazard": "Water in the fairway",
-	"AverageSwingsToGreen": 5
-},
+[
+  {
+    "HoleId": 1,
+    "Distance": 510,
+    "Par": 5,
+    "Skill": "Advance",
+    "Hazard": "None",
+    "AverageSwingsToGreen": 4
+  },
+  {
+    "HoleId": 2,
+    "Distance": 450,
+    "Par": 5,
+    "Skill": "Intermediate",
+    "Hazard": "None",
+    "AverageSwingsToGreen": 5
+  },
+  {
+    "HoleId": 3,
+    "Distance": 450,
+    "Par": 5,
+    "Skill": "Advance",
+    "Hazard": "Multiple bunkers in the fairway",
+    "AverageSwingsToGreen": 4
+  },
+  {
+    "HoleId": 4,
+    "Distance": 410,
+    "Par": 5,
+    "Skill": "Intermediate",
+    "Hazard": "Multiple bunkers in the fairway",
+    "AverageSwingsToGreen": 5
+  },
+  {
+    "HoleId": 5,
+    "Distance": 350,
+    "Par": 5,
+    "Skill": "Beginner",
+    "Hazard": "Multiple bunkers in the fairway",
+    "AverageSwingsToGreen": 6
+  },
+  {
+    "HoleId": 6,
+    "Distance": 410,
+    "Par": 4,
+    "Skill": "Advance",
+    "Hazard": "Wooded fairway",
+    "AverageSwingsToGreen": 3
+  },
+  {
+    "HoleId": 7,
+    "Distance": 350,
+    "Par": 4,
+    "Skill": "Intermediate",
+    "Hazard": "Wooded fairway",
+    "AverageSwingsToGreen": 4
+  },
+  {
+    "HoleId": 8,
+    "Distance": 290,
+    "Par": 4,
+    "Skill": "Beginner",
+    "Hazard": "Wooded fairway",
+    "AverageSwingsToGreen": 5
+  },
+  {
+    "HoleId": 9,
+    "Distance": 320,
+    "Par": 4,
+    "Skill": "Advance",
+    "Hazard": "None",
+    "AverageSwingsToGreen": 2
+  },
+  {
+    "HoleId": 10,
+    "Distance": 290,
+    "Par": 4,
+    "Skill": "Intermediate",
+    "Hazard": "None",
+    "AverageSwingsToGreen": 3
+  },
+  {
+    "HoleId": 11,
+    "Distance": 230,
+    "Par": 4,
+    "Skill": "Beginner",
+    "Hazard": "None",
+    "AverageSwingsToGreen": 4
+  },
+  {
+    "HoleId": 12,
+    "Distance": 185,
+    "Par": 3,
+    "Skill": "Advance",
+    "Hazard": "Water around the green",
+    "AverageSwingsToGreen": 1
+  },
+  {
+    "HoleId": 13,
+    "Distance": 165,
+    "Par": 3,
+    "Skill": "Intermediate",
+    "Hazard": "Water around the green",
+    "AverageSwingsToGreen": 2
+  },
+  {
+    "HoleId": 14,
+    "Distance": 120,
+    "Par": 3,
+    "Skill": "Beginner",
+    "Hazard": "Water around the green",
+    "AverageSwingsToGreen": 3
+  },
+  {
+    "HoleId": 15,
+    "Distance": 165,
+    "Par": 3,
+    "Skill": "Advance",
+    "Hazard": "Bunkers around the green",
+    "AverageSwingsToGreen": 1
+  },
+  {
+    "HoleId": 16,
+    "Distance": 145,
+    "Par": 3,
+    "Skill": "Intermediate",
+    "Hazard": "Bunkers around the green",
+    "AverageSwingsToGreen": 2
+  },
+  {
+    "HoleId": 17,
+    "Distance": 105,
+    "Par": 3,
+    "Skill": "Beginner",
+    "Hazard": "Bunkers around the green",
+    "AverageSwingsToGreen": 3
+  },
+  {
+    "HoleId": 18,
+    "Distance": 385,
+    "Par": 5,
+    "Skill": "Advance",
+    "Hazard": "Water in the fairway",
+    "AverageSwingsToGreen": 2
+  },
+  {
+    "HoleId": 19,
+    "Distance": 355,
+    "Par": 5,
+    "Skill": "Intermediate",
+    "Hazard": "Water in the fairway",
+    "AverageSwingsToGreen": 3
+  },
+  {
+    "HoleId": 20,
+    "Distance": 300,
+    "Par": 5,
+    "Skill": "Beginner",
+    "Hazard": "Water in the fairway",
+    "AverageSwingsToGreen": 5
+  }
+]

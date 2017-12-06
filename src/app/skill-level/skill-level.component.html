@@ -1,3 +1,12 @@
-<p>
-  skill-level works!
-</p>
+<form [formGroup]="skillLevelsForm" novalidate>
+  <div class="container">
+    <div class="row">
+      <div col form-group>
+        <div form-control-label>Skill Levels</div>
+        <div class="checkbox checkbox-primary" *ngFor="let skillLevel of skillLevels;let i=index;">
+          <input type="radio" id="skillLevel{{i}}" name="skillLevel" [value]="skillLevel.skillLevelId" />{{skillLevel.description}}
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
