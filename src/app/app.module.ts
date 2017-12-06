@@ -17,9 +17,8 @@ import { PracticeNavComponent } from './shared/practice-nav/practice-nav.compone
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
-  { path: 'practice', component: PracticeComponent, children: [
-      { path: 'golfhole', component: GolfHoleComponent }
-    ] },
+  { path: 'practice', component: PracticeComponent },
+  { path: 'golfhole', component: GolfHoleComponent },
   { path: '**', component: PathNotFoundComponent }
 ];
 
