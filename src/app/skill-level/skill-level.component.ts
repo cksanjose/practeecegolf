@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { SkillLevelService } from "./skilllevel.service";
 import { ISkillLevel } from "../shared/skillLevel";
 import { FormGroup } from "@angular/forms";
+import { PlayerProfile } from "../shared/playerProfile";
 
 @Component({
   selector: 'app-skill-level',
@@ -11,6 +12,8 @@ import { FormGroup } from "@angular/forms";
 export class SkillLevelComponent implements OnInit {
   private skillLevels: ISkillLevel[];
   private skillLevelsForm;
+
+  @Input() playerProfile: PlayerProfile;
 
   constructor(private skillLevelService: SkillLevelService) { }
 
