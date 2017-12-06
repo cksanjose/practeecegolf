@@ -12,11 +12,14 @@ import { RouterModule, Routes } from "@angular/router";
 import { HomeComponent } from './home/home.component';
 import { SkillLevelService } from "./skill-level/skilllevel.service";
 import { HttpClientModule } from "@angular/common/http";
+import { PracticeNavComponent } from './shared/practice-nav/practice-nav.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
-  { path: 'practice', component: PracticeComponent },
+  { path: 'practice', component: PracticeComponent, children: [
+      { path: 'golfhole', component: GolfHoleComponent }
+    ] },
   { path: '**', component: PathNotFoundComponent }
 ];
 
@@ -27,7 +30,8 @@ const appRoutes: Routes = [
     SkillLevelComponent,
     GolfHoleComponent,
     PathNotFoundComponent,
-    HomeComponent
+    HomeComponent,
+    PracticeNavComponent
   ],
   imports: [
     BrowserModule,
