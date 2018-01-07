@@ -13,6 +13,7 @@ import { HomeComponent } from './home/home.component';
 import { SkillLevelService } from "./skill-level/skilllevel.service";
 import { HttpClientModule } from "@angular/common/http";
 import { PracticeNavComponent } from './shared/practice-nav/practice-nav.component';
+import { MaterialModule } from "./shared/material.module";
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -37,7 +38,8 @@ const appRoutes: Routes = [
     FormsModule,
     HttpClientModule,
     RouterModule.forRoot(appRoutes, { enableTracing: true }),
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MaterialModule
   ],
   providers: [
     GolfHoleService,

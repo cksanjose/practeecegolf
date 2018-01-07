@@ -3,8 +3,7 @@ import { PlayerProfile } from "../shared/playerProfile";
 
 @Component({
   selector: 'app-practice',
-  templateUrl: './practice.component.html',
-  styleUrls: ['./practice.component.css']
+  templateUrl: './practice.component.html'
 })
 export class PracticeComponent implements OnInit {
   private playerProfile: PlayerProfile;

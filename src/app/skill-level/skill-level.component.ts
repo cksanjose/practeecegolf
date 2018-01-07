@@ -6,8 +6,7 @@ import { PlayerProfile } from "../shared/playerProfile";
 
 @Component({
   selector: 'app-skill-level',
-  templateUrl: './skill-level.component.html',
-  styleUrls: ['./skill-level.component.css']
+  templateUrl: './skill-level.component.html'
 })
 export class SkillLevelComponent implements OnInit {
   private skillLevels: ISkillLevel[];

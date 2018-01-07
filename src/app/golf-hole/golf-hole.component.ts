@@ -4,8 +4,7 @@ import { IGolfHole } from "../shared/golfHole";
 
 @Component({
   selector: 'app-golf-hole',
-  templateUrl: './golf-hole.component.html',
-  styleUrls: ['./golf-hole.component.css']
+  templateUrl: './golf-hole.component.html'
 })
 export class GolfHoleComponent implements OnInit {
   private golfHoles: IGolfHole[];
