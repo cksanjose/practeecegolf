@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { GolfHoleService } from "./golf-hole.service";
 import { IGolfHole } from "../shared/golfHole";
+import { PlayerProfile } from "../shared/playerProfile";
 
 @Component({
   selector: 'app-golf-hole',
@@ -9,6 +10,8 @@ import { IGolfHole } from "../shared/golfHole";
 export class GolfHoleComponent implements OnInit {
   private golfHoles: IGolfHole[];
 
+  @Input() playerProfile: PlayerProfile;
+
   constructor(private golfHoleService: GolfHoleService) { }
 
   ngOnInit() {
@@ -16,6 +19,8 @@ export class GolfHoleComponent implements OnInit {
       this.golfHoles = holes;
       console.log(this.golfHoles);
     });
+
+    console.log(this.playerProfile);
   }
 
 }

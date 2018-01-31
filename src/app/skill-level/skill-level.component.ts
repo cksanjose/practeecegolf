@@ -27,7 +27,7 @@ export class SkillLevelComponent implements OnInit {
         this.skillLevels = skillLevels;
         console.log(this.skillLevels);
       });
-    
+
     console.log(this.playerProfile.skillLevel);
 
     return this.skillLevelsForm;
