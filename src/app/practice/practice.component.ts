@@ -13,6 +13,7 @@ export class PracticeComponent implements OnInit {
   ngOnInit() {
     this.playerProfile = new PlayerProfile();
     this.playerProfile.playerProfileId = 1;
+    console.log(this.playerProfile.playerProfileId);
   }
 
 }

@@ -14,9 +14,8 @@ export class GolfHoleComponent implements OnInit {
   ngOnInit() {
     this.golfHoleService.getGolfHoles().subscribe(holes => {
       this.golfHoles = holes;
+      console.log(this.golfHoles);
     });
-
-    console.log(this.golfHoles);
   }
 
 }

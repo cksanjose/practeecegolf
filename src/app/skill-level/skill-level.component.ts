@@ -23,7 +23,12 @@ export class SkillLevelComponent implements OnInit {
     });
 
     this.skillLevelService.getSkillLevels()
-      .subscribe(skillLevels => this.skillLevels = skillLevels);
+      .subscribe(skillLevels => {
+        this.skillLevels = skillLevels;
+        console.log(this.skillLevels);
+      });
+    
+    console.log(this.playerProfile.skillLevel);
 
     return this.skillLevelsForm;
   }
