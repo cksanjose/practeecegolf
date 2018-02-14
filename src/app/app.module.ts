@@ -7,14 +7,15 @@ import { AppComponent } from './app.component';
 import { PracticeComponent } from './practice/practice.component';
 import { SkillLevelComponent } from './skill-level/skill-level.component';
 import { GolfHoleComponent } from './golf-hole/golf-hole.component';
-import { GolfHoleService } from "./golf-hole/golf-hole.service";
+import { GolfHoleService } from './golf-hole/golf-hole.service';
 import { PathNotFoundComponent } from './shared/path-not-found/path-not-found.component';
-import { RouterModule, Routes } from "@angular/router";
+import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
-import { SkillLevelService } from "./skill-level/skilllevel.service";
-import { HttpClientModule } from "@angular/common/http";
+import { SkillLevelService } from './skill-level/skilllevel.service';
+import { HttpClientModule } from '@angular/common/http';
 import { PracticeNavComponent } from './shared/practice-nav/practice-nav.component';
-import { MaterialModule } from "./shared/material.module";
+import { MaterialModule } from './shared/material.module';
+import { PlayerProfileServiceService } from './shared/player-profile-service.service';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -45,7 +46,8 @@ const appRoutes: Routes = [
   ],
   providers: [
     GolfHoleService,
-    SkillLevelService
+    SkillLevelService,
+    PlayerProfileServiceService
   ],
   bootstrap: [
     AppComponent
