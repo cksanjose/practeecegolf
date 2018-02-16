@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { PlayerProfile } from './playerProfile';
 
 @Injectable()
-export class PlayerProfileServiceService {
+export class PlayerProfileService {
 
   private playerProfile: PlayerProfile;
 

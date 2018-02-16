@@ -15,7 +15,7 @@ import { SkillLevelService } from './skill-level/skilllevel.service';
 import { HttpClientModule } from '@angular/common/http';
 import { PracticeNavComponent } from './shared/practice-nav/practice-nav.component';
 import { MaterialModule } from './shared/material.module';
-import { PlayerProfileServiceService } from './shared/player-profile-service.service';
+import { PlayerProfileService } from './shared/player-profile.service';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -47,7 +47,7 @@ const appRoutes: Routes = [
   providers: [
     GolfHoleService,
     SkillLevelService,
-    PlayerProfileServiceService
+    PlayerProfileService
   ],
   bootstrap: [
     AppComponent

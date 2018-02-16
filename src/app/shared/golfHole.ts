@@ -1,10 +1,8 @@
-import { SkillLevelTypes } from "./skillLeveTypes";
-
 export class IGolfHole {
   holeId: number;
   distance: number;
   par: number;
-  skill: SkillLevelTypes;
+  skill: string;
   hazard: string;
   averageSwingsToGreen: number;
 }

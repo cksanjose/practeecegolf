@@ -1,6 +1,6 @@
 import { TestBed, inject } from '@angular/core/testing';
 
-import { PlayerProfileServiceService } from './player-profile-service.service';
+import { PlayerProfileServiceService } from './player-profile.service';
 
 describe('PlayerProfileServiceService', () => {
   beforeEach(() => {

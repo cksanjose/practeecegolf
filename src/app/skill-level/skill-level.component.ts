@@ -3,6 +3,8 @@ import { SkillLevelService } from './skilllevel.service';
 import { ISkillLevel } from '../shared/skillLevel';
 import { FormGroup } from '@angular/forms';
 import { PlayerProfile } from '../shared/playerProfile';
+import { PlayerProfileService } from '../shared/player-profile.service';
+import { SkillLevelTypes } from '../shared/skillLeveTypes';
 
 @Component({
   selector: 'app-skill-level',
@@ -14,7 +16,7 @@ export class SkillLevelComponent implements OnInit {
 
   @Input() playerProfile: PlayerProfile;
 
-  constructor(private skillLevelService: SkillLevelService) { }
+  constructor(private skillLevelService: SkillLevelService, private playerProfileService: PlayerProfileService) { }
 
   ngOnInit(): FormGroup {
 
@@ -34,6 +36,7 @@ export class SkillLevelComponent implements OnInit {
   }
 
   onSkillLevelChanged(entry) {
-    this.playerProfile.skillLevel = entry;
+    this.playerProfile.skillLevel = SkillLevelTypes[entry];
+    this.playerProfileService.playerProfileUpdate(this.playerProfile);
   }
 }

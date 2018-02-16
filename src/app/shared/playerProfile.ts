@@ -1,6 +1,4 @@
-import { SkillLevelTypes } from "./skillLeveTypes";
-
 export class PlayerProfile {
   playerProfileId: number;
-  skillLevel: SkillLevelTypes;
+  skillLevel: string;
 }

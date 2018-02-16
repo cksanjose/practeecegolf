@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PlayerProfile } from '../shared/playerProfile';
-import {PlayerProfileServiceService} from '../shared/player-profile-service.service';
+import { PlayerProfileService } from '../shared/player-profile.service';
 
 @Component({
   selector: 'app-practice',
@@ -9,12 +9,12 @@ import {PlayerProfileServiceService} from '../shared/player-profile-service.serv
 export class PracticeComponent implements OnInit {
   private playerProfile: PlayerProfile;
 
-  constructor(private playerProfileServiceService: PlayerProfileServiceService) { }
+  constructor(private playerProfileService: PlayerProfileService) { }
 
   ngOnInit() {
     this.playerProfile = new PlayerProfile();
     this.playerProfile.playerProfileId = 1;
-    this.playerProfileServiceService.playerProfileUpdate(this.playerProfile);
+    this.playerProfileService.playerProfileUpdate(this.playerProfile);
     console.log(this.playerProfile.playerProfileId);
   }
 

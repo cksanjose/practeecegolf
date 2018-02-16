@@ -3,7 +3,7 @@
     "holeId": 1,
     "distance": 510,
     "par": 5,
-    "skill": "Advance",
+    "skill": "Advanced",
     "hazard": "None",
     "averageSwingsToGreen": 4
   },
@@ -19,7 +19,7 @@
     "holeId": 3,
     "distance": 450,
     "par": 5,
-    "skill": "Advance",
+    "skill": "Advanced",
     "hazard": "Multiple bunkers in the fairway",
     "averageSwingsToGreen": 4
   },
@@ -43,7 +43,7 @@
     "holeId": 6,
     "distance": 410,
     "par": 4,
-    "skill": "Advance",
+    "skill": "Advanced",
     "hazard": "Wooded fairway",
     "averageSwingsToGreen": 3
   },
@@ -67,7 +67,7 @@
     "holeId": 9,
     "distance": 320,
     "par": 4,
-    "skill": "Advance",
+    "skill": "Advanced",
     "hazard": "None",
     "averageSwingsToGreen": 2
   },
@@ -91,7 +91,7 @@
     "holeId": 12,
     "distance": 185,
     "par": 3,
-    "skill": "Advance",
+    "skill": "Advanced",
     "hazard": "Water around the green",
     "averageSwingsToGreen": 1
   },
@@ -115,7 +115,7 @@
     "holeId": 15,
     "distance": 165,
     "par": 3,
-    "skill": "Advance",
+    "skill": "Advanced",
     "hazard": "Bunkers around the green",
     "averageSwingsToGreen": 1
   },
@@ -139,7 +139,7 @@
     "holeId": 18,
     "distance": 385,
     "par": 5,
-    "skill": "Advance",
+    "skill": "Advanced",
     "hazard": "Water in the fairway",
     "averageSwingsToGreen": 2
   },

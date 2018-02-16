@@ -12,5 +12,4 @@ export class GolfHoleService {
   getGolfHoles(): Observable<IGolfHole[]> {
     return this._http.get<IGolfHole[]>(this._dataUrl + "holes.json")
   }
-
 }
