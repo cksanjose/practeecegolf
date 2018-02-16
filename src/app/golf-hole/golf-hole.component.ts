@@ -11,6 +11,7 @@ import { PlayerProfileService } from '../shared/player-profile.service';
 export class GolfHoleComponent implements OnInit {
   private golfHoles: IGolfHole[];
   private playerProfile: PlayerProfile;
+  private currentGolfHole: IGolfHole;
 
   constructor(private golfHoleService: GolfHoleService,
               private playerProfileService: PlayerProfileService) { }
@@ -22,7 +23,7 @@ export class GolfHoleComponent implements OnInit {
       const filteredGolfHoles = this.golfHoles.filter(g => g.skill === this.playerProfile.skillLevel);
       const idx = Math.floor(Math.random() * filteredGolfHoles.length);
       console.log(filteredGolfHoles);
-      console.log(filteredGolfHoles[idx]);
+      this.currentGolfHole = filteredGolfHoles[idx];
     });
   }
 

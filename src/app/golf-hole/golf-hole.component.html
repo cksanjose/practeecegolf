@@ -1,4 +1,15 @@
-<p>
-  golf-hole works!
-</p>
+<form [formGroup]="golfHoleForm" novalidate>
+  <div class="container">
+    <div class="row">
+      <div col form-group>
+        <div>Hole Id: {{currentGolfHole.holeId}}</div>
+        <div>Skill Level: {{currentGolfHole.skill}}</div>
+        <div>Par: {{currentGolfHole.par}}</div>
+        <div>Distance: {{currentGolfHole.distance}}</div>
+        <div>Ave Swings To Green: {{currentGolfHole.averageSwingsToGreen}}</div>
+        <div>Hazard(s): {{currentGolfHole.hazard}}</div>
+      </div>
+    </div>
+  </div>
+</form>
 <app-practice-nav></app-practice-nav>
