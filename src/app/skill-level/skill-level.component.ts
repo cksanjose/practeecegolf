@@ -12,7 +12,7 @@ import { SkillLevelTypes } from '../shared/skillLeveTypes';
 })
 export class SkillLevelComponent implements OnInit {
   private skillLevels: ISkillLevel[];
-  private skillLevelsForm;
+  private skillLevelsForm: FormGroup;
 
   @Input() playerProfile: PlayerProfile;
 

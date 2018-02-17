@@ -15,7 +15,6 @@ export class PracticeComponent implements OnInit {
     this.playerProfile = new PlayerProfile();
     this.playerProfile.playerProfileId = 1;
     this.playerProfileService.playerProfileUpdate(this.playerProfile);
-    console.log(this.playerProfile.playerProfileId);
   }
 
 }

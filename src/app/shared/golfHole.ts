@@ -1,4 +1,4 @@
-export class IGolfHole {
+export class GolfHole {
   holeId: number;
   distance: number;
   par: number;

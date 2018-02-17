@@ -1,22 +1,30 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { GolfHoleService } from './golf-hole.service';
-import { IGolfHole } from '../shared/golfHole';
+import { GolfHole } from '../shared/golfHole';
 import { PlayerProfile } from '../shared/playerProfile';
 import { PlayerProfileService } from '../shared/player-profile.service';
+import { FormGroup } from "@angular/forms";
 
 @Component({
   selector: 'app-golf-hole',
   templateUrl: './golf-hole.component.html'
 })
 export class GolfHoleComponent implements OnInit {
-  private golfHoles: IGolfHole[];
+  private golfHoles: GolfHole[];
   private playerProfile: PlayerProfile;
-  private currentGolfHole: IGolfHole;
+  private currentGolfHole: GolfHole;
+  private golfHoleForm: FormGroup;
 
   constructor(private golfHoleService: GolfHoleService,
               private playerProfileService: PlayerProfileService) { }
 
-  ngOnInit() {
+  ngOnInit(): FormGroup {
+
+    this.currentGolfHole = new GolfHole();
+    this.golfHoleForm = new FormGroup({
+
+    });
+
     this.golfHoleService.getGolfHoles().subscribe(holes => {
       this.golfHoles = holes;
       this.playerProfile = this.playerProfileService.getPlayerProfile();
@@ -24,7 +32,10 @@ export class GolfHoleComponent implements OnInit {
       const idx = Math.floor(Math.random() * filteredGolfHoles.length);
       console.log(filteredGolfHoles);
       this.currentGolfHole = filteredGolfHoles[idx];
+      console.log(this.currentGolfHole);
     });
+
+    return this.golfHoleForm;
   }
 
 }

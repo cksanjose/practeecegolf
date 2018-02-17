@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs/Observable";
-import { IGolfHole } from "../shared/golfHole";
+import { GolfHole } from "../shared/golfHole";
 
 @Injectable()
 export class GolfHoleService {
@@ -9,7 +9,7 @@ export class GolfHoleService {
 
   constructor(private _http: HttpClient) { }
 
-  getGolfHoles(): Observable<IGolfHole[]> {
-    return this._http.get<IGolfHole[]>(this._dataUrl + "holes.json")
+  getGolfHoles(): Observable<GolfHole[]> {
+    return this._http.get<GolfHole[]>(this._dataUrl + "holes.json")
   }
 }
