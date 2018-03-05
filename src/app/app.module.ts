@@ -18,6 +18,8 @@ import { MaterialModule } from './shared/material.module';
 import { PlayerProfileService } from './shared/player-profile.service';
 import { ShotResultComponent } from './shot-result/shot-result.component';
 import { ShotResultService } from "./shot-result/shot-result.service";
+import { PracticeHeaderComponent } from './shared/practice-header/practice-header.component';
+import { PracticeClubComponent } from './practice-club/practice-club.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -25,6 +27,7 @@ const appRoutes: Routes = [
   { path: 'practice', component: PracticeComponent },
   { path: 'golfhole', component: GolfHoleComponent },
   { path: 'shotresult', component: ShotResultComponent },
+  { path: 'practiceclub', component: PracticeClubComponent },
   { path: '**', component: PathNotFoundComponent }
 ];
 
@@ -37,7 +40,9 @@ const appRoutes: Routes = [
     PathNotFoundComponent,
     HomeComponent,
     PracticeNavComponent,
-    ShotResultComponent
+    ShotResultComponent,
+    PracticeHeaderComponent,
+    PracticeClubComponent
   ],
   imports: [
     BrowserModule,
