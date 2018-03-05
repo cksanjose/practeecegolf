@@ -1,3 +1,6 @@
-<p>
-  <button (click)="showNextHole()">Next Hole</button><a routerLink="../shotresult"><button>View Results</button></a>
+<p *ngIf="!isGolfHole">
+  <a routerLink="../golfhole"><button>Next Hole</button></a>
+</p>
+<p *ngIf="isGolfHole">
+  <a routerLink="../shotresult"><button>View Results</button></a>
 </p>
