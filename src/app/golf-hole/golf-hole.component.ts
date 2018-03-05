@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
 import { GolfHoleService } from './golf-hole.service';
 import { GolfHole } from '../shared/golfHole';
 import { PlayerProfile } from '../shared/playerProfile';
@@ -12,8 +12,9 @@ import { FormGroup } from "@angular/forms";
 export class GolfHoleComponent implements OnInit {
   private golfHoles: GolfHole[];
   private playerProfile: PlayerProfile;
-  private currentGolfHole: GolfHole;
   private golfHoleForm: FormGroup;
+
+  @Output() currentGolfHole: GolfHole
 
   constructor(private golfHoleService: GolfHoleService,
               private playerProfileService: PlayerProfileService) { }

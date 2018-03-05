@@ -16,12 +16,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { PracticeNavComponent } from './shared/practice-nav/practice-nav.component';
 import { MaterialModule } from './shared/material.module';
 import { PlayerProfileService } from './shared/player-profile.service';
+import { ShotResultComponent } from './shot-result/shot-result.component';
+import { ShotResultService } from "./shot-result/shot-result.service";
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
   { path: 'practice', component: PracticeComponent },
   { path: 'golfhole', component: GolfHoleComponent },
+  { path: 'shotresult', component: ShotResultComponent },
   { path: '**', component: PathNotFoundComponent }
 ];
 
@@ -33,7 +36,8 @@ const appRoutes: Routes = [
     GolfHoleComponent,
     PathNotFoundComponent,
     HomeComponent,
-    PracticeNavComponent
+    PracticeNavComponent,
+    ShotResultComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +51,8 @@ const appRoutes: Routes = [
   providers: [
     GolfHoleService,
     SkillLevelService,
-    PlayerProfileService
+    PlayerProfileService,
+    ShotResultService
   ],
   bootstrap: [
     AppComponent
