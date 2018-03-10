@@ -4,7 +4,7 @@
       <div col form-group>
         <div form-control-label>Skill Levels</div>
         <div class="checkbox checkbox-primary" *ngFor="let skillLevel of skillLevels;let i=index;">
-            <input type="radio" id="skillLevel{{i}}" name="skillLevel" [checked]="i === 0"
+            <input type="radio" id="skillLevel{{i}}" name="skillLevel"
                    [value]="skillLevel.skillLevelId" (change)="onSkillLevelChanged(skillLevel.skillLevelId)" />{{skillLevel.description}}
         </div>
         <div>Selected Skill Level: {{playerProfile.skillLevel}}</div>
