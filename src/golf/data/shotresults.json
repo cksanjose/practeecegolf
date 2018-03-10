@@ -58,5 +58,35 @@
     "shotType": "Woohoo!",
     "result": "Hole in one! Great shot!",
     "distanceToGreen": 0
+  },
+  {
+    "shotResultId": 11,
+    "shotType": "Fairway",
+    "result": "In uphill lie, the ball in the middle of the fairway",
+    "distanceToGreen": 0
+  },
+  {
+    "shotResultId": 12,
+    "shotType": "Fairway",
+    "result": "In downhill lie, the ball in the middle of the fairway",
+    "distanceToGreen": 0
+  },
+  {
+    "shotResultId": 13,
+    "shotType": "Rough",
+    "result": "In uphill lie, the ball in the first cut rough",
+    "distanceToGreen": 0
+  },
+  {
+    "shotResultId": 14,
+    "shotType": "Rough",
+    "result": "In downhill lie, the ball in the first cut rough",
+    "distanceToGreen": 0
+  },
+  {
+    "shotResultId": 15,
+    "shotType": "Water",
+    "result": "The ball is in the water!!",
+    "distanceToGreen": 0
   }
 ]

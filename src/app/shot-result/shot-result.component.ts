@@ -40,6 +40,7 @@ export class ShotResultComponent implements OnInit {
         //if par is 5 and swing 4, then ball on fairway, ball on green, ball on rough near green
         //if par is 5 and swing >= 5, then ball on green, ball on rough near green
         this.playerProfile = this.playerProfileService.getPlayerProfile();
+        console.log(this.shotResults);
       });
     }
   }
