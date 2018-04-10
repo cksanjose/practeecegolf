@@ -6,7 +6,6 @@ import { GolfHole } from "../shared/golfHole";
 @Injectable()
 export class GolfHoleService {
   private _dataUrl = "./golf/data/";
-  private currentGolfHole: GolfHole;
 
   constructor(private _http: HttpClient) { }
 
@@ -14,12 +13,11 @@ export class GolfHoleService {
     return this._http.get<GolfHole[]>(this._dataUrl + "holes.json");
   }
 
-  getGolfHole(skillLevel: string): GolfHole | null {
+  getGolfHole(skillLevel: string): GolfHole | any {
     this.getGolfHoles().subscribe(holes => {
         const filteredGolfHoles = holes.filter(g => g.skill === skillLevel);
         const idx = Math.floor(Math.random() * filteredGolfHoles.length);
-        this.currentGolfHole = filteredGolfHoles[idx];
+        return filteredGolfHoles[idx];
     });
-    return this.currentGolfHole;
   }
 }

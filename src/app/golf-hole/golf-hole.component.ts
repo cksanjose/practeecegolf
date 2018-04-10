@@ -26,14 +26,13 @@ export class GolfHoleComponent implements OnInit {
 
     });
 
+    this.playerProfile = this.playerProfileService.getPlayerProfile();
+
+    this.currentGolfHole = this.golfHoleService.getGolfHole(this.playerProfile.skillLevel);
+
     this.golfHoleService.getGolfHoles().subscribe(holes => {
       this.golfHoles = holes;
-      this.playerProfile = this.playerProfileService.getPlayerProfile();
-      const filteredGolfHoles = this.golfHoles.filter(g => g.skill === this.playerProfile.skillLevel);
-      const idx = Math.floor(Math.random() * filteredGolfHoles.length);
-      console.log(filteredGolfHoles);
-      this.currentGolfHole = filteredGolfHoles[idx];
-      console.log(this.currentGolfHole);
+      console.log(this.golfHoles);
     });
 
     return this.golfHoleForm;
