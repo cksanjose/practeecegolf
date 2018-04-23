@@ -23,22 +23,6 @@ export class ShotResultComponent implements OnInit {
   ngOnInit() {
       this.shotResultService.getShotResults().subscribe(shotResults => {
         this.shotResults = shotResults;
-        //if par is 3 and swing is 1,
-        // skill is adv/int then ball on green, ball in rough near green
-        // skill is beg then ball on fairway
-        //if par is 3 and swing is 2,
-        // skill is adv/int, then ball on green, ball in rough near green
-        // skill is beg, then ball on rough near green
-        //if par is 4 or greater and swing 1,
-        // skill is adv/int, then ball in fairway, ball in rough
-        // skill is int, then ball in woods
-        // skill is beg, then ball in woods, ball in rough
-        //if par is 4 or greater and swing 2, then ball in fairway, woods (chip out), rough, ball on green, ball on rough near green
-        //if par is 4 swing 3, then ball on green, ball on rough near green
-        //if par is 4 swing >= 4, then ball on green, ball on rough near green
-        //if par is 5 and swing 3, then ball on fairway, ball on green, ball on rough near green
-        //if par is 5 and swing 4, then ball on fairway, ball on green, ball on rough near green
-        //if par is 5 and swing >= 5, then ball on green, ball on rough near green
         this.playerProfile = this.playerProfileService.getPlayerProfile();
         console.log(this.shotResults);
       });

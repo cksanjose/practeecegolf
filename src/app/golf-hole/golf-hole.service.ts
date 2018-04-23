@@ -12,12 +12,4 @@ export class GolfHoleService {
   getGolfHoles(): Observable<GolfHole[]> {
     return this._http.get<GolfHole[]>(this._dataUrl + "holes.json");
   }
-
-  getGolfHole(skillLevel: string): GolfHole | any {
-    this.getGolfHoles().subscribe(holes => {
-        const filteredGolfHoles = holes.filter(g => g.skill === skillLevel);
-        const idx = Math.floor(Math.random() * filteredGolfHoles.length);
-        return filteredGolfHoles[idx];
-    });
-  }
 }
