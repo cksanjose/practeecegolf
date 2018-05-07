@@ -1,20 +1,20 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from "@angular/common/http";
-import { Observable } from "rxjs";
-import { ShotResult } from "../shared/shotResult";
-import { GolfHole } from "../shared/golfHole";
-import { ISkillLevel } from "../shared/skillLevel";
-import { SkillLevelTypes } from "../shared/skillLeveTypes";
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { ShotResult } from '../shared/shotResult';
+import { GolfHole } from '../shared/golfHole';
+import { ISkillLevel } from '../shared/skillLevel';
+import { SkillLevelTypes } from '../shared/skillLeveTypes';
 
 @Injectable()
 export class ShotResultService {
 
-  private _dataUrl = "./golf/data/";
+  private _dataUrl = 'assets/data/';
 
   constructor(private _http: HttpClient) { }
 
   getShotResults(): Observable<ShotResult[]> {
-    return this._http.get<ShotResult[]>(this._dataUrl + "shotresults.json")
+    return this._http.get<ShotResult[]>(this._dataUrl + 'shotresults.json')
   }
 
   getShotResult(golfHole: GolfHole, swing: number, skillLevel: ISkillLevel): ShotResult {

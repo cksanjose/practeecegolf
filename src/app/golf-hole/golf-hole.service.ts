@@ -5,7 +5,7 @@ import { GolfHole } from '../shared/golfHole';
 
 @Injectable()
 export class GolfHoleService {
-  private _dataUrl = './golf/data/';
+  private _dataUrl = 'assets/data/';
 
   constructor(private _http: HttpClient) { }
 

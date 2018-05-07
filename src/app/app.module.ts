@@ -17,7 +17,7 @@ import { PracticeNavComponent } from './shared/practice-nav/practice-nav.compone
 import { MaterialModule } from './shared/material.module';
 import { PlayerProfileService } from './shared/player-profile.service';
 import { ShotResultComponent } from './shot-result/shot-result.component';
-import { ShotResultService } from "./shot-result/shot-result.service";
+import { ShotResultService } from './shot-result/shot-result.service';
 import { PracticeHeaderComponent } from './shared/practice-header/practice-header.component';
 import { PracticeClubComponent } from './practice-club/practice-club.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
