@@ -3,7 +3,7 @@ import { GolfHoleService } from './golf-hole.service';
 import { GolfHole } from '../shared/golfHole';
 import { PlayerProfile } from '../shared/playerProfile';
 import { PlayerProfileService } from '../shared/player-profile.service';
-import { FormGroup } from "@angular/forms";
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-golf-hole',

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
-import { Observable } from "rxjs/Observable";
+import { Observable } from "rxjs";
 import { ShotResult } from "../shared/shotResult";
 import { GolfHole } from "../shared/golfHole";
 import { ISkillLevel } from "../shared/skillLevel";

@@ -20,6 +20,8 @@ import { ShotResultComponent } from './shot-result/shot-result.component';
 import { ShotResultService } from "./shot-result/shot-result.service";
 import { PracticeHeaderComponent } from './shared/practice-header/practice-header.component';
 import { PracticeClubComponent } from './practice-club/practice-club.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -51,7 +53,8 @@ const appRoutes: Routes = [
     FormsModule,
     HttpClientModule,
     RouterModule.forRoot(appRoutes, { enableTracing: false }),
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [
     GolfHoleService,
