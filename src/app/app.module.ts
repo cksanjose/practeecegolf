@@ -16,12 +16,20 @@ import { HttpClientModule } from '@angular/common/http';
 import { PracticeNavComponent } from './shared/practice-nav/practice-nav.component';
 import { MaterialModule } from './shared/material.module';
 import { PlayerProfileService } from './shared/player-profile.service';
+import { ShotResultComponent } from './shot-result/shot-result.component';
+import { ShotResultService } from './shot-result/shot-result.service';
+import { PracticeHeaderComponent } from './shared/practice-header/practice-header.component';
+import { PracticeClubComponent } from './practice-club/practice-club.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
   { path: 'practice', component: PracticeComponent },
   { path: 'golfhole', component: GolfHoleComponent },
+  { path: 'shotresult', component: ShotResultComponent },
+  { path: 'practiceclub', component: PracticeClubComponent },
   { path: '**', component: PathNotFoundComponent }
 ];
 
@@ -33,7 +41,10 @@ const appRoutes: Routes = [
     GolfHoleComponent,
     PathNotFoundComponent,
     HomeComponent,
-    PracticeNavComponent
+    PracticeNavComponent,
+    ShotResultComponent,
+    PracticeHeaderComponent,
+    PracticeClubComponent
   ],
   imports: [
     BrowserModule,
@@ -41,13 +52,15 @@ const appRoutes: Routes = [
     MaterialModule,
     FormsModule,
     HttpClientModule,
-    RouterModule.forRoot(appRoutes, { enableTracing: true }),
-    ReactiveFormsModule
+    RouterModule.forRoot(appRoutes, { enableTracing: false }),
+    ReactiveFormsModule,
+    ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [
     GolfHoleService,
     SkillLevelService,
-    PlayerProfileService
+    PlayerProfileService,
+    ShotResultService
   ],
   bootstrap: [
     AppComponent

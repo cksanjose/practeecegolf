@@ -1,4 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ShotResult } from "../shotResult";
+import { PlayerProfile } from "../playerProfile";
+import { GolfHole } from "../golfHole";
+import { PlayerProfileService } from "../player-profile.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-practice-nav',
@@ -6,9 +11,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PracticeNavComponent implements OnInit {
 
-  constructor() { }
+  @Input() currentGolfHole: GolfHole;
+
+  playerProfile: PlayerProfile;
+  isGolfHole: boolean;
+
+  constructor(private playerProfileService: PlayerProfileService,
+              private router: Router) { }
 
   ngOnInit() {
+    this.playerProfile = this.playerProfileService.getPlayerProfile();
+    console.log(this.playerProfile.skillLevel);
+    if (this.currentGolfHole != null) {
+      console.log(`Current golf hole: ${this.currentGolfHole.holeId}`);
+    }
+    this.isGolfHole = this.router.url.indexOf("golfhole") > 0;
   }
-
 }

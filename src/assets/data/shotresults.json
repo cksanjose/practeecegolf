@@ -1,0 +1,92 @@
+[
+  {
+	  "shotResultId": 1,
+    "shotType": "Fairway",
+	  "result": "Ball in the middle of the fairway",
+	  "distanceToGreen": 0
+  },
+  {
+    "shotResultId": 2,
+    "shotType": "Rough",
+    "result": "Ball in the rough",
+    "distanceToGreen": 0
+  },
+  {
+    "shotResultId": 3,
+    "shotType": "Chip Out",
+    "result": "Ball in the trees",
+    "distanceToGreen": 0
+  },
+  {
+    "shotResultId": 4,
+    "shotType": "Putt",
+    "result": "Ball on the green",
+    "distanceToGreen": 0
+  },
+  {
+    "shotResultId": 5,
+    "shotType": "Bunker",
+    "result": "Ball in the fairway bunker",
+    "distanceToGreen": 0
+  },
+  {
+    "shotResultId": 6,
+    "shotType": "Bunker",
+    "result": "Ball in the green-side bunker",
+    "distanceToGreen": 0
+  },
+  {
+    "shotResultId": 7,
+    "shotType": "Chip",
+    "result": "Ball in the green-side rough",
+    "distanceToGreen": 0
+  },
+  {
+    "shotResultId": 8,
+    "shotType": "Rough",
+    "result": "Ball in the first cut rough",
+    "distanceToGreen": 0
+  },
+  {
+    "shotResultId": 9,
+    "shotType": "Woohoo!",
+    "result": "Ball in the cup! Great shot!",
+    "distanceToGreen": 0
+  },
+  {
+    "shotResultId": 10,
+    "shotType": "Woohoo!",
+    "result": "Hole in one! Great shot!",
+    "distanceToGreen": 0
+  },
+  {
+    "shotResultId": 11,
+    "shotType": "Fairway",
+    "result": "In uphill lie, the ball in the middle of the fairway",
+    "distanceToGreen": 0
+  },
+  {
+    "shotResultId": 12,
+    "shotType": "Fairway",
+    "result": "In downhill lie, the ball in the middle of the fairway",
+    "distanceToGreen": 0
+  },
+  {
+    "shotResultId": 13,
+    "shotType": "Rough",
+    "result": "In uphill lie, the ball in the first cut rough",
+    "distanceToGreen": 0
+  },
+  {
+    "shotResultId": 14,
+    "shotType": "Rough",
+    "result": "In downhill lie, the ball in the first cut rough",
+    "distanceToGreen": 0
+  },
+  {
+    "shotResultId": 15,
+    "shotType": "Water",
+    "result": "The ball is in the water!!",
+    "distanceToGreen": 0
+  }
+]

@@ -1,10 +1,12 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PracticeComponent } from './practice.component';
+import { PlayerProfileService } from "../shared/player-profile.service";
 
 describe('PracticeComponent', () => {
   let component: PracticeComponent;
   let fixture: ComponentFixture<PracticeComponent>;
+  let playerProfileServie: PlayerProfileService;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -16,6 +18,7 @@ describe('PracticeComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(PracticeComponent);
     component = fixture.componentInstance;
+    playerProfileServie = TestBed.get(PlayerProfileService);
     fixture.detectChanges();
   });
 
