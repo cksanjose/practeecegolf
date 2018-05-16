@@ -8,6 +8,7 @@ import { Par3ShotResultEngine } from './shot-result-engine/par3-shot-result-engi
 import { Par4ShotResultEngine} from './shot-result-engine/par4-shot-result-engine';
 import { BaseShotResultEngine } from './shot-result-engine/base-shot-result-engine';
 import { Par5ShotResultEngine } from './shot-result-engine/par5-shot-result-engine';
+import * as shotResults from '../../assets/data/shotresults.json';
 
 @Injectable()
 export class ShotResultService {
@@ -22,6 +23,9 @@ export class ShotResultService {
   }
 
   getShotResult(golfHole: GolfHole, swing: number, skillLevel: ISkillLevel): ShotResult {
+
+    console.log(shotResults);
+
     switch (golfHole.par) {
       case 3:
         this.shotResultEngine = new Par3ShotResultEngine();
@@ -30,30 +34,10 @@ export class ShotResultService {
       case 4:
         this.shotResultEngine = new Par4ShotResultEngine();
         return this.shotResultEngine.determineShotResult(skillLevel, swing);
-/*        if (skillLevel.skillLevelId === SkillLevelTypes.Beginner) {
-          if (swing <= 1) {
-
-          } else {
-
-          }
-        } else {
-
-        }
-        break;*/
 
       case 5:
         this.shotResultEngine = new Par5ShotResultEngine();
         return this.shotResultEngine.determineShotResult(skillLevel, swing);
-/*        if (skillLevel.skillLevelId === SkillLevelTypes.Beginner) {
-          if (swing <= 1) {
-
-          } else {
-
-          }
-        } else {
-
-        }
-        break;*/
     }
     // if par is 3 and swing is 1,
     // skill is adv/int then ball on green, ball in rough near green
