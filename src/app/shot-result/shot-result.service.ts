@@ -24,7 +24,8 @@ export class ShotResultService {
 
   getShotResult(golfHole: GolfHole, swing: number, skillLevel: ISkillLevel): ShotResult {
 
-    console.log(shotResults);
+    console.log(shotResults.default);
+    this.shotResultEngine.shotResults = shotResults.default;
 
     switch (golfHole.par) {
       case 3:
