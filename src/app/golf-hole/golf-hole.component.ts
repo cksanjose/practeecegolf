@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, Output } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import { GolfHoleService } from './golf-hole.service';
 import { GolfHole } from '../shared/golfHole';
 import { PlayerProfile } from '../shared/playerProfile';
@@ -14,27 +14,24 @@ export class GolfHoleComponent implements OnInit {
   private playerProfile: PlayerProfile;
   private golfHoleForm: FormGroup;
 
-  @Output() currentGolfHole: GolfHole
+  @Output() currentGolfHole = new EventEmitter<GolfHole>();
 
   constructor(private golfHoleService: GolfHoleService,
               private playerProfileService: PlayerProfileService) { }
 
   ngOnInit(): FormGroup {
-
-    this.currentGolfHole = new GolfHole();
     this.golfHoleForm = new FormGroup({
 
     });
 
     this.playerProfile = this.playerProfileService.getPlayerProfile();
-    this.playerProfile.practiceSession.golfHole = this.currentGolfHole;
     this.playerProfile.practiceSession.swingCount = 0;
 
     this.golfHoleService.getGolfHoles().subscribe(holes => {
       this.golfHoles = holes;
       const filteredGolfHoles = holes.filter(g => g.skill === this.playerProfile.skillLevel);
       const idx = Math.floor(Math.random() * filteredGolfHoles.length);
-      this.currentGolfHole = filteredGolfHoles[idx];
+      this.currentGolfHole.emit(filteredGolfHoles[idx]);
     });
 
     return this.golfHoleForm;

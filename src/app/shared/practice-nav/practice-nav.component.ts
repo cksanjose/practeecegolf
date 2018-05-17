@@ -1,5 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ShotResult } from "../shotResult";
 import { PlayerProfile } from "../playerProfile";
 import { GolfHole } from "../golfHole";
 import { PlayerProfileService } from "../player-profile.service";
