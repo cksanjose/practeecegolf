@@ -21,13 +21,16 @@ export class ShotResultComponent implements OnInit {
               private shotResultService: ShotResultService) { }
 
   ngOnInit() {
+      this.playerProfile = this.playerProfileService.getPlayerProfile();
       this.shotResultService.getShotResults().subscribe(shotResults => {
         this.shotResults = shotResults;
-        this.playerProfile = this.playerProfileService.getPlayerProfile();
         console.log(this.shotResults);
       });
+      this.playerProfile.practiceSession.golfHole = this.currentGolfHole;
+      this.playerProfile.practiceSession.swingCount++;
 
-      this.shotResult = this.shotResultService.getShotResult(this.currentGolfHole, 1, this.playerProfile.skillLevel);
+      this.shotResult = this.shotResultService
+        .getShotResult(this.currentGolfHole, this.playerProfile.practiceSession.swingCount, this.playerProfile.skillLevel);
     }
   }
 
