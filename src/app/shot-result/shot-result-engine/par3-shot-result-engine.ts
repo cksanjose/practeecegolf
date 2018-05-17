@@ -7,10 +7,8 @@ export class Par3ShotResultEngine extends BaseShotResultEngine {
       if (swingCount <= 1) {
 
       } else {
-
+        // intermediate or advanced
       }
-    } else {
-
     }
     return new ShotResult();
   }
