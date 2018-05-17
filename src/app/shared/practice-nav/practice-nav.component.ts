@@ -21,9 +21,7 @@ export class PracticeNavComponent implements OnInit {
   ngOnInit() {
     this.playerProfile = this.playerProfileService.getPlayerProfile();
     console.log(this.playerProfile.skillLevel);
-    if (this.currentGolfHole != null) {
-      console.log(`Current golf hole: ${this.currentGolfHole.holeId}`);
-    }
+    console.log(this.currentGolfHole);
     this.isGolfHole = this.router.url.indexOf("golfhole") > 0;
   }
 }

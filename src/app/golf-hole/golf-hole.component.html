@@ -1,6 +1,6 @@
 <app-practice-header></app-practice-header>
 <form [formGroup]="golfHoleForm" novalidate>
-  <div class="container">
+  <div *ngIf="currentGolfHole" class="container">
       <div class="row">
         <div><label>Hole Id</label></div>
         <div>{{currentGolfHole.holeId}}</div>

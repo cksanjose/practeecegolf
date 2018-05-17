@@ -24,19 +24,21 @@ export class ShotResultService {
   getShotResult(golfHole: GolfHole, swing: number, skillLevel: string): ShotResult {
 
     console.log(shotResults.default);
-    this.shotResultEngine.shotResults = shotResults.default;
 
     switch (golfHole.par) {
       case 3:
         this.shotResultEngine = new Par3ShotResultEngine();
+        this.shotResultEngine.shotResults = shotResults.default;
         return this.shotResultEngine.determineShotResult(skillLevel, swing);
 
       case 4:
         this.shotResultEngine = new Par4ShotResultEngine();
+        this.shotResultEngine.shotResults = shotResults.default;
         return this.shotResultEngine.determineShotResult(skillLevel, swing);
 
       case 5:
         this.shotResultEngine = new Par5ShotResultEngine();
+        this.shotResultEngine.shotResults = shotResults.default;
         return this.shotResultEngine.determineShotResult(skillLevel, swing);
     }
     // if par is 3 and swing is 1,

@@ -13,8 +13,9 @@ export class GolfHoleComponent implements OnInit {
   private golfHoles: GolfHole[];
   private playerProfile: PlayerProfile;
   private golfHoleForm: FormGroup;
+  private currentGolfHole: GolfHole;
 
-  @Output() currentGolfHole = new EventEmitter<GolfHole>();
+  @Output() selectedGolfHole = new EventEmitter<GolfHole>();
 
   constructor(private golfHoleService: GolfHoleService,
               private playerProfileService: PlayerProfileService) { }
@@ -31,9 +32,9 @@ export class GolfHoleComponent implements OnInit {
       this.golfHoles = holes;
       const filteredGolfHoles = holes.filter(g => g.skill === this.playerProfile.skillLevel);
       const idx = Math.floor(Math.random() * filteredGolfHoles.length);
-      const golfHole = filteredGolfHoles[idx];
-      console.log(golfHole);
-      this.currentGolfHole.emit(golfHole);
+      this.currentGolfHole = filteredGolfHoles[idx];
+      console.log(this.currentGolfHole);
+      this.selectedGolfHole.emit(this.currentGolfHole);
     });
 
     return this.golfHoleForm;
