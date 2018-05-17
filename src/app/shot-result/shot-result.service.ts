@@ -23,8 +23,6 @@ export class ShotResultService {
 
   getShotResult(golfHole: GolfHole, swing: number, skillLevel: string): ShotResult {
 
-    console.log(shotResults.default);
-
     switch (golfHole.par) {
       case 3:
         this.shotResultEngine = new Par3ShotResultEngine();
