@@ -35,6 +35,7 @@ export class GolfHoleComponent implements OnInit {
       this.currentGolfHole = filteredGolfHoles[idx];
       console.log(this.currentGolfHole);
       this.selectedGolfHole.emit(this.currentGolfHole);
+      this.playerProfile.practiceSession.golfHole = this.currentGolfHole;
     });
 
     return this.golfHoleForm;

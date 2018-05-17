@@ -13,8 +13,7 @@ import { SkillLevelTypes } from '../shared/skillLeveTypes';
 export class SkillLevelComponent implements OnInit {
   private skillLevels: ISkillLevel[];
   private skillLevelsForm: FormGroup;
-
-  @Input() playerProfile: PlayerProfile;
+  private playerProfile: PlayerProfile;
 
   constructor(private skillLevelService: SkillLevelService, private playerProfileService: PlayerProfileService) { }
 
@@ -30,12 +29,11 @@ export class SkillLevelComponent implements OnInit {
         console.log(this.skillLevels);
       });
 
-    console.log(this.playerProfile.skillLevel);
-
     return this.skillLevelsForm;
   }
 
   onSkillLevelChanged(entry) {
+    this.playerProfile = this.playerProfileService.getPlayerProfile();
     this.playerProfile.skillLevel = SkillLevelTypes[entry];
     this.playerProfileService.playerProfileUpdate(this.playerProfile);
   }
