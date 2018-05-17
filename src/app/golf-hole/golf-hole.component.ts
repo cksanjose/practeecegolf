@@ -27,6 +27,8 @@ export class GolfHoleComponent implements OnInit {
     });
 
     this.playerProfile = this.playerProfileService.getPlayerProfile();
+    this.playerProfile.practiceSession.golfHole = this.currentGolfHole;
+    this.playerProfile.practiceSession.swingCount = 0;
 
     this.golfHoleService.getGolfHoles().subscribe(holes => {
       this.golfHoles = holes;
@@ -34,7 +36,6 @@ export class GolfHoleComponent implements OnInit {
       const idx = Math.floor(Math.random() * filteredGolfHoles.length);
       this.currentGolfHole = filteredGolfHoles[idx];
     });
-
 
     return this.golfHoleForm;
   }
