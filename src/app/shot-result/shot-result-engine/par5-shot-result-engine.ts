@@ -5,7 +5,7 @@ export class Par5ShotResultEngine extends BaseShotResultEngine {
     public determineShotResult(skillLevel: string, swingCount: number): ShotResult {
       if (skillLevel === 'Beginner') {
         if (swingCount <= 1) {
-
+          const results = this.shotResults.filter(s => s.option.find(o => o.par === 5 && o.shotCount === swingCount));
         } else {
 
         }

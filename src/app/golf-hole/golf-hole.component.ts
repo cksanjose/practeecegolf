@@ -26,7 +26,6 @@ export class GolfHoleComponent implements OnInit {
     });
 
     this.playerProfile = this.playerProfileService.getPlayerProfile();
-    this.playerProfile.practiceSession.swingCount = 0;
 
     this.golfHoleService.getGolfHoles().subscribe(holes => {
       this.golfHoles = holes;
