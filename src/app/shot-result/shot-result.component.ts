@@ -26,6 +26,8 @@ export class ShotResultComponent implements OnInit {
         this.playerProfile = this.playerProfileService.getPlayerProfile();
         console.log(this.shotResults);
       });
+
+      this.shotResult = this.shotResultService.getShotResult(this.currentGolfHole, 1, this.playerProfile.skillLevel);
     }
   }
 

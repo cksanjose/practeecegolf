@@ -3,7 +3,6 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { ShotResult } from '../shared/shotResult';
 import { GolfHole } from '../shared/golfHole';
-import { ISkillLevel } from '../shared/skillLevel';
 import { Par3ShotResultEngine } from './shot-result-engine/par3-shot-result-engine';
 import { Par4ShotResultEngine} from './shot-result-engine/par4-shot-result-engine';
 import { BaseShotResultEngine } from './shot-result-engine/base-shot-result-engine';
@@ -22,7 +21,7 @@ export class ShotResultService {
     return this._http.get<ShotResult[]>(this._dataUrl + 'shotresults.json')
   }
 
-  getShotResult(golfHole: GolfHole, swing: number, skillLevel: ISkillLevel): ShotResult {
+  getShotResult(golfHole: GolfHole, swing: number, skillLevel: string): ShotResult {
 
     console.log(shotResults.default);
     this.shotResultEngine.shotResults = shotResults.default;
