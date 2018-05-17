@@ -31,7 +31,9 @@ export class GolfHoleComponent implements OnInit {
       this.golfHoles = holes;
       const filteredGolfHoles = holes.filter(g => g.skill === this.playerProfile.skillLevel);
       const idx = Math.floor(Math.random() * filteredGolfHoles.length);
-      this.currentGolfHole.emit(filteredGolfHoles[idx]);
+      const golfHole = filteredGolfHoles[idx];
+      console.log(golfHole);
+      this.currentGolfHole.emit(golfHole);
     });
 
     return this.golfHoleForm;
