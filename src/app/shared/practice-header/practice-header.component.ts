@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PlayerProfile } from '../playerProfile';
+import { PlayerProfileService } from '../player-profile.service';
 
 @Component({
   selector: 'app-practice-header',
@@ -6,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PracticeHeaderComponent implements OnInit {
 
-  constructor() { }
+  private playerProfile: PlayerProfile;
+
+  constructor(private playerProfileService: PlayerProfileService) { }
 
   ngOnInit() {
+    this.playerProfile = this.playerProfileService.getPlayerProfile();
   }
 
 }
