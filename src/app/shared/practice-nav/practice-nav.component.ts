@@ -20,7 +20,7 @@ export class PracticeNavComponent implements OnInit {
   ngOnInit() {
     this.playerProfile = this.playerProfileService.getPlayerProfile();
     this.practiceSession = this.playerProfile.practiceSession;
-    console.log(this.playerProfile.skillLevel);
+    console.log(this.playerProfile.skillLevelId);
     this.isGolfHole = this.router.url.indexOf("golfhole") > 0;
   }
 }

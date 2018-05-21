@@ -34,7 +34,7 @@ export class ShotResultComponent implements OnInit {
 
       this.shotResult = this.shotResultService
         .getShotResult(this.playerProfile.practiceSession.golfHole,
-          this.playerProfile.practiceSession.swingCount, this.playerProfile.skillLevel);
+          this.playerProfile.practiceSession.swingCount, this.playerProfile.skillLevelId);
 
       return this.golfHoleForm;
     }

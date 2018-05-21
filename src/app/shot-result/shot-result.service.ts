@@ -21,7 +21,7 @@ export class ShotResultService {
     return this._http.get<ShotResult[]>(this._dataUrl + 'shotresults.json')
   }
 
-  getShotResult(golfHole: GolfHole, swing: number, skillLevel: string): ShotResult {
+  getShotResult(golfHole: GolfHole, swing: number, skillLevel: number): ShotResult {
 
     switch (golfHole.par) {
       case 3:

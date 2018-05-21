@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PlayerProfile } from '../playerProfile';
 import { PlayerProfileService } from '../player-profile.service';
-import {PracticeSession} from '../practiceSession';
+import { PracticeSession } from '../practiceSession';
 
 @Component({
   selector: 'app-practice-header',

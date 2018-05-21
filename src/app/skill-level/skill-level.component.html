@@ -7,7 +7,6 @@
             <input type="radio" id="skillLevel{{i}}" name="skillLevel"
                    [value]="skillLevel.skillLevelId" (change)="onSkillLevelChanged(skillLevel.skillLevelId)" />{{skillLevel.description}}
         </div>
-        <div *ngIf="playerProfile">Selected Skill Level: {{playerProfile.skillLevel}}</div>
       </div>
     </div>
     <div>

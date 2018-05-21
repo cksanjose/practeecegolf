@@ -29,7 +29,7 @@ export class GolfHoleComponent implements OnInit {
 
     this.golfHoleService.getGolfHoles().subscribe(holes => {
       this.golfHoles = holes;
-      const filteredGolfHoles = holes.filter(g => g.skill === this.playerProfile.skillLevel);
+      const filteredGolfHoles = holes.filter(g => g.skill === this.playerProfile.skillLevelId);
       const idx = Math.floor(Math.random() * filteredGolfHoles.length);
       this.currentGolfHole = filteredGolfHoles[idx];
       console.log(this.currentGolfHole);

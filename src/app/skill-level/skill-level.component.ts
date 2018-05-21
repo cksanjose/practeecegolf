@@ -34,7 +34,8 @@ export class SkillLevelComponent implements OnInit {
 
   onSkillLevelChanged(entry) {
     this.playerProfile = this.playerProfileService.getPlayerProfile();
-    this.playerProfile.skillLevel = SkillLevelTypes[entry];
+    this.playerProfile.skillLevelDescription = SkillLevelTypes[entry];
+    this.playerProfile.skillLevelId = entry;
     this.playerProfileService.playerProfileUpdate(this.playerProfile);
   }
 }
