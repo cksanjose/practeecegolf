@@ -1,5 +1,14 @@
 <app-practice-header></app-practice-header>
-<p>
-  shot-result works!
-</p>
+<form [formGroup]="golfHoleForm" novalidate>
+  <div *ngIf="shotResult" class="container">
+    <div class="row">
+      <div><label>Shot Result</label></div>
+      <div>{{shotResult.result}}</div>
+    </div>
+    <div class="row">
+      <div><label>Type</label></div>
+      <div>{{shotResult.shotType}}</div>
+    </div>
+  </div>
+</form>
 <app-practice-nav></app-practice-nav>
