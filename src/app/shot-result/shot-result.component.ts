@@ -39,11 +39,6 @@ export class ShotResultComponent implements OnInit, OnDestroy {
 
     this.playerProfile = this.playerProfileService.getPlayerProfile();
 
-    this.shotResultService.getShotResults().subscribe(shotResults => {
-      this.shotResults = shotResults;
-      console.log(this.shotResults);
-    });
-
     this.playerProfile.practiceSession.swingCount = ++this.previousSwingCount;
 
     // emit swing count so practice nav knows about it

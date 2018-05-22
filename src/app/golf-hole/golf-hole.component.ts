@@ -15,7 +15,7 @@ export class GolfHoleComponent implements OnInit {
   private golfHoleForm: FormGroup;
   private currentGolfHole: GolfHole;
 
-  @Output() selectedGolfHole = new EventEmitter<GolfHole>();
+  @Output() swingCountEvent = new EventEmitter<number>();
 
   constructor(private golfHoleService: GolfHoleService,
               private playerProfileService: PlayerProfileService) { }
@@ -33,7 +33,10 @@ export class GolfHoleComponent implements OnInit {
       const idx = Math.floor(Math.random() * filteredGolfHoles.length);
       this.currentGolfHole = filteredGolfHoles[idx];
       console.log(this.currentGolfHole);
-      this.selectedGolfHole.emit(this.currentGolfHole);
+
+      // emit swing count so practice nav knows about it
+      this.swingCountEvent.emit(this.playerProfile.practiceSession.swingCount);
+
       this.playerProfile.practiceSession.golfHole = this.currentGolfHole;
     });
 
