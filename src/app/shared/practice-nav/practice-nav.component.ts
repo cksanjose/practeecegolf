@@ -23,4 +23,8 @@ export class PracticeNavComponent implements OnInit {
     console.log(this.playerProfile.skillLevelId);
     this.isGolfHole = this.router.url.indexOf("golfhole") > 0;
   }
+
+  goToShotResult() {
+    this.router.navigate(['../shotresult', this.practiceSession.golfHole.holeId, this.practiceSession.swingCount]);
+  }
 }
