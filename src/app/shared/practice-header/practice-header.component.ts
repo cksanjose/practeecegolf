@@ -11,6 +11,7 @@ export class PracticeHeaderComponent implements OnInit {
 
   private playerProfile: PlayerProfile;
   private practiceSession: PracticeSession;
+  private swingCount: number;
 
   constructor(private playerProfileService: PlayerProfileService) { }
 
@@ -19,4 +20,8 @@ export class PracticeHeaderComponent implements OnInit {
     this.practiceSession = this.playerProfile.practiceSession;
   }
 
+  onSwing(swingCount: number) {
+    swingCount ? this.swingCount = swingCount : this.swingCount = 1;
+    this.practiceSession.swingCount = this.swingCount;
+  }
 }

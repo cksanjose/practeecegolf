@@ -35,6 +35,7 @@ export class GolfHoleComponent implements OnInit {
       console.log(this.currentGolfHole);
 
       // emit swing count so practice nav knows about it
+      this.playerProfile.practiceSession.swingCount = 1;
       this.swingCountEvent.emit(this.playerProfile.practiceSession.swingCount);
 
       this.playerProfile.practiceSession.golfHole = this.currentGolfHole;
