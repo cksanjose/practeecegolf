@@ -13,11 +13,15 @@ export class PracticeNavComponent implements OnInit {
   private playerProfile: PlayerProfile;
   private practiceSession: PracticeSession;
   private isGolfHole: boolean;
+  private swingCount: number;
 
   constructor(private playerProfileService: PlayerProfileService,
               private router: Router) { }
 
   ngOnInit() {
+    if (this.swingCount === undefined) {
+      this.swingCount = 1;
+    }
     this.playerProfile = this.playerProfileService.getPlayerProfile();
     this.practiceSession = this.playerProfile.practiceSession;
     console.log(this.playerProfile.skillLevelId);
@@ -25,6 +29,10 @@ export class PracticeNavComponent implements OnInit {
   }
 
   goToShotResult() {
-    this.router.navigate(['../shotresult', this.practiceSession.golfHole.holeId, this.practiceSession.swingCount]);
+    this.router.navigate(['../shotresult', this.practiceSession.golfHole.holeId, this.swingCount]);
+  }
+
+  onSwing(swingCount: number) {
+    swingCount ? this.swingCount = swingCount : this.swingCount = 1;
   }
 }

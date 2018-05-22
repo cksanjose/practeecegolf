@@ -1,4 +1,4 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, EventEmitter, OnDestroy, OnInit, Output} from '@angular/core';
 import { PlayerProfileService } from '../shared/player-profile.service';
 import { ShotResultService } from './shot-result.service';
 import { ShotResult } from '../shared/shotResult';
@@ -10,7 +10,10 @@ import { ActivatedRoute } from '@angular/router';
   selector: 'app-shot-result',
   templateUrl: './shot-result.component.html'
 })
+
 export class ShotResultComponent implements OnInit, OnDestroy {
+
+  @Output() swingCountEvent = new EventEmitter<number>();
 
   private shotResults: ShotResult[];
   private shotResult: ShotResult;
@@ -41,9 +44,10 @@ export class ShotResultComponent implements OnInit, OnDestroy {
       console.log(this.shotResults);
     });
 
-    // emit swing count so practice nav knows about it
-
     this.playerProfile.practiceSession.swingCount = ++this.previousSwingCount;
+
+    // emit swing count so practice nav knows about it
+    this.swingCountEvent.emit(this.playerProfile.practiceSession.swingCount);
 
     this.shotResult = this.shotResultService
       .getShotResult(this.playerProfile.practiceSession.golfHole,
