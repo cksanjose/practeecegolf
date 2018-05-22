@@ -7,27 +7,38 @@
     "option": [
       {
         "par": 3,
-        "shotCount": 1
+        "shotCount": 1,
+        "skillLevel": [1,2]
       },
       {
         "par": 4,
-        "shotCount": 1
+        "shotCount": 1,
+        "skillLevel": [1,2,3]
       },
       {
         "par": 4,
-        "shotCount": 2
+        "shotCount": 2,
+        "skillLevel": [1,2,3]
+      },
+      {
+        "par": 4,
+        "shotCount": 3,
+        "skillLevel": [1,2]
       },
       {
         "par": 5,
-        "shotCount": 1
+        "shotCount": 1,
+        "skillLevel": [1,2,3]
       },
       {
         "par": 5,
-        "shotCount": 2
+        "shotCount": 2,
+        "skillLevel": [1,2,3]
       },
       {
         "par": 5,
-        "shotCount": 3
+        "shotCount": 3,
+        "skillLevel": [1,2]
       }
     ]
   },
@@ -39,27 +50,38 @@
     "option": [
       {
         "par": 3,
-        "shotCount": 1
+        "shotCount": 1,
+        "skillLevel": [1,2]
       },
       {
         "par": 4,
-        "shotCount": 1
+        "shotCount": 1,
+        "skillLevel": [1,2,3]
       },
       {
         "par": 4,
-        "shotCount": 2
+        "shotCount": 2,
+        "skillLevel": [1,2,3]
+      },
+      {
+        "par": 4,
+        "shotCount": 3,
+        "skillLevel": [1,2,3]
       },
       {
         "par": 5,
-        "shotCount": 1
+        "shotCount": 1,
+        "skillLevel": [1,2,3]
       },
       {
         "par": 5,
-        "shotCount": 2
+        "shotCount": 2,
+        "skillLevel": [1,2,3]
       },
       {
         "par": 5,
-        "shotCount": 3
+        "shotCount": 3,
+        "skillLevel": [1,2]
       }
     ]
   },
@@ -71,27 +93,38 @@
     "option": [
       {
         "par": 3,
-        "shotCount": 1
+        "shotCount": 1,
+        "skillLevel": [1,2,3]
       },
       {
         "par": 4,
-        "shotCount": 1
+        "shotCount": 1,
+        "skillLevel": [1,2,3]
       },
       {
         "par": 4,
-        "shotCount": 2
+        "shotCount": 2,
+        "skillLevel": [1,2,3]
+      },
+      {
+        "par": 4,
+        "shotCount": 3,
+        "skillLevel": [1,2]
       },
       {
         "par": 5,
-        "shotCount": 1
+        "shotCount": 1,
+        "skillLevel": [1,2,3]
       },
       {
         "par": 5,
-        "shotCount": 2
+        "shotCount": 2,
+        "skillLevel": [1,2,3]
       },
       {
         "par": 5,
-        "shotCount": 3
+        "shotCount": 3,
+        "skillLevel": [1,2]
       }
     ]
   },
@@ -103,27 +136,33 @@
     "option": [
       {
         "par": 3,
-        "shotCount": 1
+        "shotCount": 1,
+        "skillLevel": [1,2,3]
       },
       {
         "par": 4,
-        "shotCount": 2
+        "shotCount": 2,
+        "skillLevel": [2,3]
       },
       {
         "par": 4,
-        "shotCount": 3
+        "shotCount": 3,
+        "skillLevel": [1,2]
       },
       {
         "par": 5,
-        "shotCount": 2
+        "shotCount": 2,
+        "skillLevel": [2,3]
       },
       {
         "par": 5,
-        "shotCount": 3
+        "shotCount": 3,
+        "skillLevel": [1,2]
       },
       {
         "par": 5,
-        "shotCount": 4
+        "shotCount": 4,
+        "skillLevel": [1,2]
       }
     ]
   },
@@ -135,27 +174,33 @@
     "option": [
       {
         "par": 3,
-        "shotCount": 1
+        "shotCount": 1,
+        "skillLevel": [1,2,3]
       },
       {
         "par": 4,
-        "shotCount": 2
+        "shotCount": 2,
+        "skillLevel": [1,2,3]
       },
       {
         "par": 4,
-        "shotCount": 3
+        "shotCount": 3,
+        "skillLevel": [1,2]
       },
       {
         "par": 5,
-        "shotCount": 2
+        "shotCount": 2,
+        "skillLevel": [3]
       },
       {
         "par": 5,
-        "shotCount": 3
+        "shotCount": 3,
+        "skillLevel": [2,3]
       },
       {
         "par": 5,
-        "shotCount": 4
+        "shotCount": 4,
+        "skillLevel": [1]
       }
     ]
   },
@@ -167,31 +212,38 @@
     "option": [
       {
         "par": 3,
-        "shotCount": 1
+        "shotCount": 1,
+        "skillLevel": [1,2,3]
       },
       {
         "par": 3,
-        "shotCount": 2
+        "shotCount": 2,
+        "skillLevel": [1,2]
       },
       {
         "par": 4,
-        "shotCount": 2
+        "shotCount": 2,
+        "skillLevel": [2,3]
       },
       {
         "par": 4,
-        "shotCount": 3
+        "shotCount": 3,
+        "skillLevel": [1,2]
       },
       {
         "par": 5,
-        "shotCount": 2
+        "shotCount": 2,
+        "skillLevel": [3]
       },
       {
         "par": 5,
-        "shotCount": 3
+        "shotCount": 3,
+        "skillLevel": [2,3]
       },
       {
         "par": 5,
-        "shotCount": 4
+        "shotCount": 4,
+        "skillLevel": [1,2]
       }
     ]
   },
@@ -203,31 +255,38 @@
     "option": [
       {
         "par": 3,
-        "shotCount": 1
+        "shotCount": 1,
+        "skillLevel": [1,2,3]
       },
       {
         "par": 3,
-        "shotCount": 2
+        "shotCount": 2,
+        "skillLevel": [1,2]
       },
       {
         "par": 4,
-        "shotCount": 2
+        "shotCount": 2,
+        "skillLevel": [2,3]
       },
       {
         "par": 4,
-        "shotCount": 3
+        "shotCount": 3,
+        "skillLevel": [1,2]
       },
       {
         "par": 5,
-        "shotCount": 2
+        "shotCount": 2,
+        "skillLevel": [2,3]
       },
       {
         "par": 5,
-        "shotCount": 3
+        "shotCount": 3,
+        "skillLevel": [1,2]
       },
       {
         "par": 5,
-        "shotCount": 4
+        "shotCount": 4,
+        "skillLevel": [1,2]
       }
     ]
   },
@@ -239,27 +298,33 @@
     "option": [
       {
         "par": 3,
-        "shotCount": 1
+        "shotCount": 1,
+        "skillLevel": [1]
       },
       {
         "par": 4,
-        "shotCount": 2
+        "shotCount": 2,
+        "skillLevel": [1,2,3]
       },
       {
         "par": 4,
-        "shotCount": 3
+        "shotCount": 3,
+        "skillLevel": [1,2]
       },
       {
         "par": 5,
-        "shotCount": 2
+        "shotCount": 2,
+        "skillLevel": [3]
       },
       {
         "par": 5,
-        "shotCount": 3
+        "shotCount": 3,
+        "skillLevel": [2,3]
       },
       {
         "par": 5,
-        "shotCount": 4
+        "shotCount": 4,
+        "skillLevel": [1]
       }
     ]
   },
@@ -271,39 +336,48 @@
     "option": [
       {
         "par": 3,
-        "shotCount": 1
+        "shotCount": 1,
+        "skillLevel": [1,2,3]
       },
       {
         "par": 3,
-        "shotCount": 2
+        "shotCount": 2,
+        "skillLevel": [1,2,3]
       },
       {
         "par": 4,
-        "shotCount": 2
+        "shotCount": 2,
+        "skillLevel": [2,3]
       },
       {
         "par": 4,
-        "shotCount": 3
+        "shotCount": 3,
+        "skillLevel": [1,2,3]
       },
       {
         "par": 4,
-        "shotCount": 4
+        "shotCount": 4,
+        "skillLevel": [1,2]
       },
       {
         "par": 5,
-        "shotCount": 2
+        "shotCount": 2,
+        "skillLevel": [3]
       },
       {
         "par": 5,
-        "shotCount": 3
+        "shotCount": 3,
+        "skillLevel": [2,3]
       },
       {
         "par": 5,
-        "shotCount": 4
+        "shotCount": 4,
+        "skillLevel": [1,2]
       },
       {
         "par": 5,
-        "shotCount": 5
+        "shotCount": 5,
+        "skillLevel": [1]
       }
     ]
   },
@@ -315,7 +389,8 @@
     "option": [
       {
         "par": 3,
-        "shotCount": 1
+        "shotCount": 1,
+        "skillLevel": [1,2,3]
       }
     ]
   },
@@ -327,27 +402,33 @@
     "option": [
       {
         "par": 3,
-        "shotCount": 1
+        "shotCount": 1,
+        "skillLevel": [1,2]
       },
       {
         "par": 4,
-        "shotCount": 2
+        "shotCount": 2,
+        "skillLevel": [1,2,3]
       },
       {
         "par": 4,
-        "shotCount": 3
+        "shotCount": 3,
+        "skillLevel": [2,3]
       },
       {
         "par": 5,
-        "shotCount": 2
+        "shotCount": 2,
+        "skillLevel": [1,2,3]
       },
       {
         "par": 5,
-        "shotCount": 3
+        "shotCount": 3,
+        "skillLevel": [2,3]
       },
       {
         "par": 5,
-        "shotCount": 4
+        "shotCount": 4,
+        "skillLevel": [1,2]
       }
     ]
   },
@@ -359,27 +440,33 @@
     "option": [
       {
         "par": 3,
-        "shotCount": 1
+        "shotCount": 1,
+        "skillLevel": [1,2,3]
       },
       {
         "par": 4,
-        "shotCount": 2
+        "shotCount": 2,
+        "skillLevel": [1,2,3]
       },
       {
         "par": 4,
-        "shotCount": 3
+        "shotCount": 3,
+        "skillLevel": [1,2]
       },
       {
         "par": 5,
-        "shotCount": 2
+        "shotCount": 2,
+        "skillLevel": [1,2,3]
       },
       {
         "par": 5,
-        "shotCount": 3
+        "shotCount": 3,
+        "skillLevel": [1,2,3]
       },
       {
         "par": 5,
-        "shotCount": 4
+        "shotCount": 4,
+        "skillLevel": [1,2]
       }
     ]
   },
@@ -391,27 +478,33 @@
     "option": [
       {
         "par": 3,
-        "shotCount": 1
+        "shotCount": 1,
+        "skillLevel": [1,2,3]
       },
       {
         "par": 4,
-        "shotCount": 2
+        "shotCount": 2,
+        "skillLevel": [1,2,3]
       },
       {
         "par": 4,
-        "shotCount": 3
+        "shotCount": 3,
+        "skillLevel": [1,2]
       },
       {
         "par": 5,
-        "shotCount": 2
+        "shotCount": 2,
+        "skillLevel": [1,2,3]
       },
       {
         "par": 5,
-        "shotCount": 3
+        "shotCount": 3,
+        "skillLevel": [1,2]
       },
       {
         "par": 5,
-        "shotCount": 4
+        "shotCount": 4,
+        "skillLevel": [1,2]
       }
     ]
   },
@@ -423,27 +516,33 @@
     "option": [
       {
         "par": 3,
-        "shotCount": 1
+        "shotCount": 1,
+        "skillLevel": [1,2,3]
       },
       {
         "par": 4,
-        "shotCount": 2
+        "shotCount": 2,
+        "skillLevel": [1,2,3]
       },
       {
         "par": 4,
-        "shotCount": 3
+        "shotCount": 3,
+        "skillLevel": [1,2]
       },
       {
         "par": 5,
-        "shotCount": 2
+        "shotCount": 2,
+        "skillLevel": [1,2,3]
       },
       {
         "par": 5,
-        "shotCount": 3
+        "shotCount": 3,
+        "skillLevel": [1,2]
       },
       {
         "par": 5,
-        "shotCount": 4
+        "shotCount": 4,
+        "skillLevel": [1,2]
       }
     ]
   },
@@ -455,27 +554,33 @@
     "option": [
       {
         "par": 3,
-        "shotCount": 1
+        "shotCount": 1,
+        "skillLevel": [1,2,3]
       },
       {
         "par": 4,
-        "shotCount": 2
+        "shotCount": 2,
+        "skillLevel": [1,2,3]
       },
       {
         "par": 4,
-        "shotCount": 3
+        "shotCount": 3,
+        "skillLevel": [1,2,3]
       },
       {
         "par": 5,
-        "shotCount": 2
+        "shotCount": 2,
+        "skillLevel": [1,2,3]
       },
       {
         "par": 5,
-        "shotCount": 3
+        "shotCount": 3,
+        "skillLevel": [1,2,3]
       },
       {
         "par": 5,
-        "shotCount": 4
+        "shotCount": 4,
+        "skillLevel": [1,2,3]
       }
     ]
   }
