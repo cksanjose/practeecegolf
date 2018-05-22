@@ -1,4 +1,4 @@
-<app-practice-header></app-practice-header>
+<app-practice-header (swingCountEvent)="onSwing($event)"></app-practice-header>
 <form [formGroup]="golfHoleForm" novalidate>
   <div *ngIf="shotResult" class="container">
     <div class="row">
