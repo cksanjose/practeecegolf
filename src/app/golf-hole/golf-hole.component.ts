@@ -20,10 +20,7 @@ export class GolfHoleComponent implements OnInit {
   constructor(private golfHoleService: GolfHoleService,
               private playerProfileService: PlayerProfileService) { }
 
-  ngOnInit(): FormGroup {
-    this.golfHoleForm = new FormGroup({
-
-    });
+  ngOnInit() {
 
     this.playerProfile = this.playerProfileService.getPlayerProfile();
 
@@ -41,7 +38,6 @@ export class GolfHoleComponent implements OnInit {
       this.playerProfile.practiceSession.golfHole = this.currentGolfHole;
     });
 
-    return this.golfHoleForm;
   }
 
 }

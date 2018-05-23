@@ -26,10 +26,7 @@ export class ShotResultComponent implements OnInit, OnDestroy {
               private shotResultService: ShotResultService,
               private route: ActivatedRoute) { }
 
-  ngOnInit(): FormGroup {
-    this.golfHoleForm = new FormGroup({
-
-    });
+  ngOnInit() {
 
     this.paramSubscribe = this.route.params.subscribe(params => {
       this.previousHoleId = +params['holeId'];
@@ -46,8 +43,6 @@ export class ShotResultComponent implements OnInit, OnDestroy {
     this.shotResult = this.shotResultService
       .getShotResult(this.playerProfile.practiceSession.golfHole,
         this.playerProfile.practiceSession.swingCount, this.playerProfile.skillLevelId);
-
-    return this.golfHoleForm;
   }
 
   ngOnDestroy(): void {

@@ -1,5 +1,4 @@
 <app-practice-header (swingCountEvent)="onSwing($event)"></app-practice-header>
-<form [formGroup]="golfHoleForm" novalidate>
   <div *ngIf="shotResult" class="container">
     <div class="row">
       <div><label>Shot Result</label></div>
@@ -10,5 +9,4 @@
       <div>{{shotResult.shotType}}</div>
     </div>
   </div>
-</form>
 <app-practice-nav (swingCountEvent)="onSwing($event)"></app-practice-nav>
