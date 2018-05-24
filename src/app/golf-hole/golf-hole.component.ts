@@ -1,19 +1,19 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import { Component, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
 import { GolfHoleService } from './golf-hole.service';
 import { GolfHole } from '../shared/golfHole';
 import { PlayerProfile } from '../shared/playerProfile';
 import { PlayerProfileService } from '../shared/player-profile.service';
-import { FormGroup } from '@angular/forms';
+import { Subscription } from 'rxjs/internal/Subscription';
 
 @Component({
   selector: 'app-golf-hole',
   templateUrl: './golf-hole.component.html'
 })
-export class GolfHoleComponent implements OnInit {
+export class GolfHoleComponent implements OnInit, OnDestroy {
   private golfHoles: GolfHole[];
   private playerProfile: PlayerProfile;
-  private golfHoleForm: FormGroup;
   private currentGolfHole: GolfHole;
+  private subscription: Subscription;
 
   @Output() swingCountEvent = new EventEmitter<number>();
 
@@ -22,7 +22,10 @@ export class GolfHoleComponent implements OnInit {
 
   ngOnInit() {
 
-    this.playerProfile = this.playerProfileService.getPlayerProfile();
+    // subscription to player profile service to detect changes
+    this.subscription = this.playerProfileService.subscribePlayerProfile().subscribe(profile => {
+      this.playerProfile = profile;
+    });
 
     this.golfHoleService.getGolfHoles().subscribe(holes => {
       this.golfHoles = holes;
@@ -38,6 +41,12 @@ export class GolfHoleComponent implements OnInit {
       this.playerProfile.practiceSession.golfHole = this.currentGolfHole;
     });
 
+  }
+
+  ngOnDestroy(): void {
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
   }
 
 }
