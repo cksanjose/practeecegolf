@@ -21,9 +21,9 @@ export class PracticeHeaderComponent implements OnInit, OnDestroy {
     // subscription to player profile service to detect changes
     this.subscription = this.playerProfileService.subscribePlayerProfile().subscribe(profile => {
       this.playerProfile = profile;
-    });
 
-    this.practiceSession = this.playerProfile.practiceSession;
+      this.practiceSession = this.playerProfile.practiceSession;
+    });
   }
 
   onSwing(swingCount: number) {

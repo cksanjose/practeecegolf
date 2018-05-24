@@ -36,16 +36,16 @@ export class ShotResultComponent implements OnInit, OnDestroy {
     // subscription to player profile service to detect changes
     this.subscription = this.playerProfileService.subscribePlayerProfile().subscribe(profile => {
       this.playerProfile = profile;
+
+      this.playerProfile.practiceSession.swingCount = ++this.previousSwingCount;
+
+      // emit swing count so practice nav knows about it
+      this.swingCountEvent.emit(this.playerProfile.practiceSession.swingCount);
+
+      this.shotResult = this.shotResultService
+        .getShotResult(this.playerProfile.practiceSession.golfHole,
+          this.playerProfile.practiceSession.swingCount, this.playerProfile.skillLevelId);
     });
-
-    this.playerProfile.practiceSession.swingCount = ++this.previousSwingCount;
-
-    // emit swing count so practice nav knows about it
-    this.swingCountEvent.emit(this.playerProfile.practiceSession.swingCount);
-
-    this.shotResult = this.shotResultService
-      .getShotResult(this.playerProfile.practiceSession.golfHole,
-        this.playerProfile.practiceSession.swingCount, this.playerProfile.skillLevelId);
   }
 
   ngOnDestroy(): void {

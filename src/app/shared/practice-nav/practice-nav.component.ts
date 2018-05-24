@@ -27,10 +27,9 @@ export class PracticeNavComponent implements OnInit, OnDestroy {
     // subscription to player profile service to detect changes
     this.subscription = this.playerProfileService.subscribePlayerProfile().subscribe(profile => {
       this.playerProfile = profile;
+      this.practiceSession = this.playerProfile.practiceSession;
     });
 
-    this.practiceSession = this.playerProfile.practiceSession;
-    console.log(this.playerProfile.skillLevelId);
     this.isGolfHole = this.router.url.indexOf('golfhole') > 0;
   }
 

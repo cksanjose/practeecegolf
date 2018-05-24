@@ -25,22 +25,22 @@ export class GolfHoleComponent implements OnInit, OnDestroy {
     // subscription to player profile service to detect changes
     this.subscription = this.playerProfileService.subscribePlayerProfile().subscribe(profile => {
       this.playerProfile = profile;
+
+      this.golfHoleService.getGolfHoles().subscribe(holes => {
+        this.golfHoles = holes;
+        const filteredGolfHoles = holes.filter(g => g.skill === this.playerProfile.skillLevelId);
+        const idx = Math.floor(Math.random() * filteredGolfHoles.length);
+        this.currentGolfHole = filteredGolfHoles[idx];
+        console.log(this.currentGolfHole);
+
+        // emit swing count so practice nav knows about it
+        this.playerProfile.practiceSession.swingCount = 1;
+        this.swingCountEvent.emit(this.playerProfile.practiceSession.swingCount);
+
+        this.playerProfile.practiceSession.golfHole = this.currentGolfHole;
+
+      });
     });
-
-    this.golfHoleService.getGolfHoles().subscribe(holes => {
-      this.golfHoles = holes;
-      const filteredGolfHoles = holes.filter(g => g.skill === this.playerProfile.skillLevelId);
-      const idx = Math.floor(Math.random() * filteredGolfHoles.length);
-      this.currentGolfHole = filteredGolfHoles[idx];
-      console.log(this.currentGolfHole);
-
-      // emit swing count so practice nav knows about it
-      this.playerProfile.practiceSession.swingCount = 1;
-      this.swingCountEvent.emit(this.playerProfile.practiceSession.swingCount);
-
-      this.playerProfile.practiceSession.golfHole = this.currentGolfHole;
-    });
-
   }
 
   ngOnDestroy(): void {
