@@ -36,7 +36,7 @@ export class GolfHoleComponent implements OnInit, OnDestroy {
     });
 
     // emit swing count so practice nav knows about it
-    this.playerProfile.practiceSession.swingCount = 1;
+    this.playerProfile.practiceSession.swingCount = 0;
     this.swingCountEvent.emit(this.playerProfile.practiceSession.swingCount);
 
     this.playerProfileService.playerProfileUpdate(this.playerProfile);

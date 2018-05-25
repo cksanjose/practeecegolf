@@ -22,10 +22,6 @@ export class PracticeNavComponent implements OnInit, OnDestroy {
 
     // subscription to player profile service to detect changes
     this.playerProfile = this.playerProfileService.getPlayerProfile();
-    /*this.subscription = this.playerProfileService.playerProfile$.subscribe(profile => {
-      this.playerProfile = profile;
-      this.practiceSession = this.playerProfile.practiceSession;
-    });*/
   }
 
   ngOnInit() {
@@ -36,7 +32,16 @@ export class PracticeNavComponent implements OnInit, OnDestroy {
   }
 
   goToShotResult() {
-    this.router.navigate(['../shotresult', this.playerProfile.practiceSession.golfHole.holeId, this.playerProfile.practiceSession.swingCount]);
+    if (this.router.navigated === false) {
+      // Case when route was not used yet
+      this.router.navigate(['../shotresult', this.playerProfile.practiceSession.golfHole.holeId, this.playerProfile.practiceSession.swingCount]);
+    } else {
+      // Case when route was used once or more then route to home and then route shot result
+      this.router.navigateByUrl(`/index`).then(
+        () => {
+          this.router.navigate(['../shotresult', this.playerProfile.practiceSession.golfHole.holeId, this.playerProfile.practiceSession.swingCount]);
+        });
+    }
   }
 
   onSwing(swingCount: number) {
