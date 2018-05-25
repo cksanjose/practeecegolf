@@ -24,11 +24,6 @@ export class PracticeHeaderComponent implements OnInit, OnDestroy {
     this.practiceSession = this.playerProfile.practiceSession;
   }
 
-  onSwing(swingCount: number) {
-    swingCount ? this.swingCount = swingCount : this.swingCount = 1;
-    this.practiceSession.swingCount = this.swingCount;
-  }
-
   ngOnDestroy(): void {
     if (this.subscription) {
       this.subscription.unsubscribe();

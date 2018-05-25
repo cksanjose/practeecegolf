@@ -15,8 +15,6 @@ export class GolfHoleComponent implements OnInit, OnDestroy {
   private currentGolfHole: GolfHole;
   private subscription: Subscription;
 
-  @Output() swingCountEvent = new EventEmitter<number>();
-
   constructor(private golfHoleService: GolfHoleService,
               private playerProfileService: PlayerProfileService) {
 
@@ -37,7 +35,6 @@ export class GolfHoleComponent implements OnInit, OnDestroy {
 
     // emit swing count so practice nav knows about it
     this.playerProfile.practiceSession.swingCount = 0;
-    this.swingCountEvent.emit(this.playerProfile.practiceSession.swingCount);
 
     this.playerProfileService.playerProfileUpdate(this.playerProfile);
   }

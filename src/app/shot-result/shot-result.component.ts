@@ -13,8 +13,6 @@ import {Subscription} from 'rxjs/internal/Subscription';
 
 export class ShotResultComponent implements OnInit, OnDestroy {
 
-  @Output() swingCountEvent = new EventEmitter<number>();
-
   private shotResult: ShotResult;
   private readonly playerProfile: PlayerProfile;
   private previousHoleId: number;
@@ -36,9 +34,6 @@ export class ShotResultComponent implements OnInit, OnDestroy {
       this.playerProfile.practiceSession.swingCount = ++this.previousSwingCount;
       this.playerProfileService.playerProfileUpdate(this.playerProfile);
     });
-
-    // emit swing count so practice nav knows about it
-    this.swingCountEvent.emit(this.playerProfile.practiceSession.swingCount);
 
     this.shotResult = this.shotResultService
       .getShotResult(this.playerProfile.practiceSession.golfHole,
