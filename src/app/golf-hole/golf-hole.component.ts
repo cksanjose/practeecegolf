@@ -11,7 +11,7 @@ import { Subscription } from 'rxjs/internal/Subscription';
 })
 export class GolfHoleComponent implements OnInit, OnDestroy {
   private golfHoles: GolfHole[];
-  private playerProfile: PlayerProfile;
+  private readonly playerProfile: PlayerProfile;
   private currentGolfHole: GolfHole;
   private subscription: Subscription;
 
@@ -31,6 +31,7 @@ export class GolfHoleComponent implements OnInit, OnDestroy {
       const filteredGolfHoles = holes.filter(g => g.skill === this.playerProfile.skillLevelId);
       const idx = Math.floor(Math.random() * filteredGolfHoles.length);
       this.currentGolfHole = filteredGolfHoles[idx];
+      this.playerProfile.practiceSession.golfHole = this.currentGolfHole;
       console.log(this.currentGolfHole);
     });
 
@@ -38,7 +39,6 @@ export class GolfHoleComponent implements OnInit, OnDestroy {
     this.playerProfile.practiceSession.swingCount = 1;
     this.swingCountEvent.emit(this.playerProfile.practiceSession.swingCount);
 
-    this.playerProfile.practiceSession.golfHole = this.currentGolfHole;
     this.playerProfileService.playerProfileUpdate(this.playerProfile);
   }
 

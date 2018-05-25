@@ -21,10 +21,11 @@ export class PracticeNavComponent implements OnInit, OnDestroy {
               private router: Router) {
 
     // subscription to player profile service to detect changes
-    this.subscription = this.playerProfileService.playerProfile$.subscribe(profile => {
+    this.playerProfile = this.playerProfileService.getPlayerProfile();
+    /*this.subscription = this.playerProfileService.playerProfile$.subscribe(profile => {
       this.playerProfile = profile;
       this.practiceSession = this.playerProfile.practiceSession;
-    });
+    });*/
   }
 
   ngOnInit() {
@@ -35,7 +36,7 @@ export class PracticeNavComponent implements OnInit, OnDestroy {
   }
 
   goToShotResult() {
-    this.router.navigate(['../shotresult', this.practiceSession.golfHole.holeId, this.swingCount]);
+    this.router.navigate(['../shotresult', this.playerProfile.practiceSession.golfHole.holeId, this.playerProfile.practiceSession.swingCount]);
   }
 
   onSwing(swingCount: number) {

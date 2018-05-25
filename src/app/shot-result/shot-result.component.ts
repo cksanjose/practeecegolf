@@ -16,7 +16,7 @@ export class ShotResultComponent implements OnInit, OnDestroy {
   @Output() swingCountEvent = new EventEmitter<number>();
 
   private shotResult: ShotResult;
-  private playerProfile: PlayerProfile;
+  private readonly playerProfile: PlayerProfile;
   private previousHoleId: number;
   private previousSwingCount: number;
   private paramSubscribe: any;
