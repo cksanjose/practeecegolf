@@ -24,7 +24,9 @@ export class ShotResultComponent implements OnInit, OnDestroy {
 
   constructor(private playerProfileService: PlayerProfileService,
               private shotResultService: ShotResultService,
-              private route: ActivatedRoute) { }
+              private route: ActivatedRoute) {
+    this.playerProfile = this.playerProfileService.getPlayerProfile();
+  }
 
   ngOnInit() {
 
@@ -32,20 +34,15 @@ export class ShotResultComponent implements OnInit, OnDestroy {
       this.previousHoleId = +params['holeId'];
       this.previousSwingCount = +params['swingCount'];
     });
+    
+    this.playerProfile.practiceSession.swingCount = ++this.previousSwingCount;
 
-    // subscription to player profile service to detect changes
-    this.subscription = this.playerProfileService.subscribePlayerProfile().subscribe(profile => {
-      this.playerProfile = profile;
+    // emit swing count so practice nav knows about it
+    this.swingCountEvent.emit(this.playerProfile.practiceSession.swingCount);
 
-      this.playerProfile.practiceSession.swingCount = ++this.previousSwingCount;
-
-      // emit swing count so practice nav knows about it
-      this.swingCountEvent.emit(this.playerProfile.practiceSession.swingCount);
-
-      this.shotResult = this.shotResultService
-        .getShotResult(this.playerProfile.practiceSession.golfHole,
-          this.playerProfile.practiceSession.swingCount, this.playerProfile.skillLevelId);
-    });
+    this.shotResult = this.shotResultService
+      .getShotResult(this.playerProfile.practiceSession.golfHole,
+        this.playerProfile.practiceSession.swingCount, this.playerProfile.skillLevelId);
   }
 
   ngOnDestroy(): void {

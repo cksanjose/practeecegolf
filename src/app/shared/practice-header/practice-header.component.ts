@@ -15,15 +15,13 @@ export class PracticeHeaderComponent implements OnInit, OnDestroy {
   private swingCount: number;
   private subscription: Subscription;
 
-  constructor(private playerProfileService: PlayerProfileService) { }
+  constructor(private playerProfileService: PlayerProfileService) {
+    // subscription to player profile service to detect changes
+    this.playerProfile = this.playerProfileService.getPlayerProfile();
+  }
 
   ngOnInit() {
-    // subscription to player profile service to detect changes
-    this.subscription = this.playerProfileService.subscribePlayerProfile().subscribe(profile => {
-      this.playerProfile = profile;
-
-      this.practiceSession = this.playerProfile.practiceSession;
-    });
+    this.practiceSession = this.playerProfile.practiceSession;
   }
 
   onSwing(swingCount: number) {

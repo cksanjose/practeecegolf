@@ -18,17 +18,20 @@ export class PracticeNavComponent implements OnInit, OnDestroy {
   private subscription: Subscription;
 
   constructor(private playerProfileService: PlayerProfileService,
-              private router: Router) { }
+              private router: Router) {
+
+  }
 
   ngOnInit() {
     if (this.swingCount === undefined) {
       this.swingCount = 1;
     }
+
     // subscription to player profile service to detect changes
-    this.subscription = this.playerProfileService.subscribePlayerProfile().subscribe(profile => {
+    this.subscription = this.playerProfileService.playerProfile$.subscribe(profile => {
       this.playerProfile = profile;
       this.practiceSession = this.playerProfile.practiceSession;
-    });
+    })
 
     this.isGolfHole = this.router.url.indexOf('golfhole') > 0;
   }

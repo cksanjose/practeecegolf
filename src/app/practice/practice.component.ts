@@ -10,13 +10,15 @@ import { PracticeSession } from '../shared/practiceSession';
 export class PracticeComponent implements OnInit {
   private playerProfile: PlayerProfile;
 
-  constructor(private playerProfileService: PlayerProfileService) { }
-
-  ngOnInit() {
+  constructor(private playerProfileService: PlayerProfileService) {
     this.playerProfile = new PlayerProfile();
     this.playerProfile.playerProfileId = 1;
     this.playerProfile.practiceSession = new PracticeSession();
     this.playerProfileService.playerProfileUpdate(this.playerProfile);
+  }
+
+  ngOnInit() {
+
   }
 
 }

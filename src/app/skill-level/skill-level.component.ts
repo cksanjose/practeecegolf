@@ -16,7 +16,9 @@ export class SkillLevelComponent implements OnInit, OnDestroy {
   private playerProfile: PlayerProfile;
   private subscription: Subscription;
 
-  constructor(private skillLevelService: SkillLevelService, private playerProfileService: PlayerProfileService) { }
+  constructor(private skillLevelService: SkillLevelService, private playerProfileService: PlayerProfileService) {
+    this.playerProfile = this.playerProfileService.getPlayerProfile();
+  }
 
   ngOnInit(): FormGroup {
 
@@ -34,13 +36,9 @@ export class SkillLevelComponent implements OnInit, OnDestroy {
   }
 
   onSkillLevelChanged(entry) {
-    // subscription to player profile service to detect changes
-    this.subscription = this.playerProfileService.subscribePlayerProfile().subscribe(profile => {
-      this.playerProfile = profile;
-      this.playerProfile.skillLevelDescription = this.skillLevels[entry - 1].description;
-      this.playerProfile.skillLevelId = entry;
-      this.playerProfileService.playerProfileUpdate(this.playerProfile);
-    });
+    this.playerProfile.skillLevelDescription = this.skillLevels[entry - 1].description;
+    this.playerProfile.skillLevelId = entry;
+    this.playerProfileService.playerProfileUpdate(this.playerProfile);
   }
 
   ngOnDestroy(): void {
