@@ -34,11 +34,13 @@ export class ShotResultComponent implements OnInit, OnDestroy {
       this.previousHoleId = +params['holeId'];
       this.previousSwingCount = +params['swingCount'];
     });
-    
+
     this.playerProfile.practiceSession.swingCount = ++this.previousSwingCount;
 
     // emit swing count so practice nav knows about it
     this.swingCountEvent.emit(this.playerProfile.practiceSession.swingCount);
+
+    this.playerProfileService.playerProfileUpdate(this.playerProfile);
 
     this.shotResult = this.shotResultService
       .getShotResult(this.playerProfile.practiceSession.golfHole,

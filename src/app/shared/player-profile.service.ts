@@ -22,5 +22,4 @@ export class PlayerProfileService {
   public getPlayerProfile(): PlayerProfile {
     return this.playerProfile.getValue();
   }
-
 }
