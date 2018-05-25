@@ -1,32 +1,62 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { PlayerProfileService } from "../shared/player-profile.service";
-import { ShotResultService } from "./shot-result.service";
-import { ShotResult } from "../shared/shotResult";
-import { PlayerProfile } from "../shared/playerProfile";
-import { GolfHole } from "../shared/golfHole";
+import {Component, EventEmitter, OnDestroy, OnInit, Output} from '@angular/core';
+import { PlayerProfileService } from '../shared/player-profile.service';
+import { ShotResultService } from './shot-result.service';
+import { ShotResult } from '../shared/shotResult';
+import { PlayerProfile } from '../shared/playerProfile';
+import { ActivatedRoute } from '@angular/router';
+import {Subscription} from 'rxjs/internal/Subscription';
 
 @Component({
   selector: 'app-shot-result',
   templateUrl: './shot-result.component.html'
 })
-export class ShotResultComponent implements OnInit {
 
-  @Input() currentGolfHole: GolfHole;
+export class ShotResultComponent implements OnInit, OnDestroy {
 
-  private shotResults: ShotResult[];
+  @Output() swingCountEvent = new EventEmitter<number>();
+
   private shotResult: ShotResult;
   private playerProfile: PlayerProfile;
+  private previousHoleId: number;
+  private previousSwingCount: number;
+  private paramSubscribe: any;
+  private subscription: Subscription;
 
   constructor(private playerProfileService: PlayerProfileService,
-              private shotResultService: ShotResultService) { }
+              private shotResultService: ShotResultService,
+              private route: ActivatedRoute) { }
 
   ngOnInit() {
-      this.shotResultService.getShotResults().subscribe(shotResults => {
-        this.shotResults = shotResults;
-        this.playerProfile = this.playerProfileService.getPlayerProfile();
-        console.log(this.shotResults);
-      });
+
+    this.paramSubscribe = this.route.params.subscribe(params => {
+      this.previousHoleId = +params['holeId'];
+      this.previousSwingCount = +params['swingCount'];
+    });
+
+    // subscription to player profile service to detect changes
+    this.subscription = this.playerProfileService.subscribePlayerProfile().subscribe(profile => {
+      this.playerProfile = profile;
+
+      this.playerProfile.practiceSession.swingCount = ++this.previousSwingCount;
+
+      // emit swing count so practice nav knows about it
+      this.swingCountEvent.emit(this.playerProfile.practiceSession.swingCount);
+
+      this.shotResult = this.shotResultService
+        .getShotResult(this.playerProfile.practiceSession.golfHole,
+          this.playerProfile.practiceSession.swingCount, this.playerProfile.skillLevelId);
+    });
+  }
+
+  ngOnDestroy(): void {
+    if (this.paramSubscribe) {
+      this.paramSubscribe.unsubscribe();
+    }
+
+    if (this.subscription) {
+      this.subscription.unsubscribe();
     }
   }
+}
 
 

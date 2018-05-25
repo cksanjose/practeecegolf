@@ -1,42 +1,52 @@
-import { Component, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
 import { GolfHoleService } from './golf-hole.service';
 import { GolfHole } from '../shared/golfHole';
 import { PlayerProfile } from '../shared/playerProfile';
 import { PlayerProfileService } from '../shared/player-profile.service';
-import { FormGroup } from '@angular/forms';
+import { Subscription } from 'rxjs/internal/Subscription';
 
 @Component({
   selector: 'app-golf-hole',
   templateUrl: './golf-hole.component.html'
 })
-export class GolfHoleComponent implements OnInit {
+export class GolfHoleComponent implements OnInit, OnDestroy {
   private golfHoles: GolfHole[];
   private playerProfile: PlayerProfile;
-  private golfHoleForm: FormGroup;
+  private currentGolfHole: GolfHole;
+  private subscription: Subscription;
 
-  @Output() currentGolfHole: GolfHole
+  @Output() swingCountEvent = new EventEmitter<number>();
 
   constructor(private golfHoleService: GolfHoleService,
               private playerProfileService: PlayerProfileService) { }
 
-  ngOnInit(): FormGroup {
+  ngOnInit() {
 
-    this.currentGolfHole = new GolfHole();
-    this.golfHoleForm = new FormGroup({
+    // subscription to player profile service to detect changes
+    this.subscription = this.playerProfileService.subscribePlayerProfile().subscribe(profile => {
+      this.playerProfile = profile;
 
+      this.golfHoleService.getGolfHoles().subscribe(holes => {
+        this.golfHoles = holes;
+        const filteredGolfHoles = holes.filter(g => g.skill === this.playerProfile.skillLevelId);
+        const idx = Math.floor(Math.random() * filteredGolfHoles.length);
+        this.currentGolfHole = filteredGolfHoles[idx];
+        console.log(this.currentGolfHole);
+
+        // emit swing count so practice nav knows about it
+        this.playerProfile.practiceSession.swingCount = 1;
+        this.swingCountEvent.emit(this.playerProfile.practiceSession.swingCount);
+
+        this.playerProfile.practiceSession.golfHole = this.currentGolfHole;
+
+      });
     });
+  }
 
-    this.playerProfile = this.playerProfileService.getPlayerProfile();
-
-    this.golfHoleService.getGolfHoles().subscribe(holes => {
-      this.golfHoles = holes;
-      const filteredGolfHoles = holes.filter(g => g.skill === this.playerProfile.skillLevel);
-      const idx = Math.floor(Math.random() * filteredGolfHoles.length);
-      this.currentGolfHole = filteredGolfHoles[idx];
-    });
-
-
-    return this.golfHoleForm;
+  ngOnDestroy(): void {
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
   }
 
 }

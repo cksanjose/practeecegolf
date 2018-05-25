@@ -1,30 +1,50 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { ShotResult } from "../shotResult";
-import { PlayerProfile } from "../playerProfile";
-import { GolfHole } from "../golfHole";
-import { PlayerProfileService } from "../player-profile.service";
-import { Router } from "@angular/router";
+import {Component, Input, OnDestroy, OnInit} from '@angular/core';
+import { PlayerProfile } from '../playerProfile';
+import { PlayerProfileService } from '../player-profile.service';
+import { Router } from '@angular/router';
+import { PracticeSession } from '../practiceSession';
+import { Subscription } from 'rxjs/internal/Subscription';
 
 @Component({
   selector: 'app-practice-nav',
   templateUrl: './practice-nav.component.html'
 })
-export class PracticeNavComponent implements OnInit {
+export class PracticeNavComponent implements OnInit, OnDestroy {
 
-  @Input() currentGolfHole: GolfHole;
-
-  playerProfile: PlayerProfile;
-  isGolfHole: boolean;
+  private playerProfile: PlayerProfile;
+  private practiceSession: PracticeSession;
+  private isGolfHole: boolean;
+  private swingCount: number;
+  private subscription: Subscription;
 
   constructor(private playerProfileService: PlayerProfileService,
               private router: Router) { }
 
   ngOnInit() {
-    this.playerProfile = this.playerProfileService.getPlayerProfile();
-    console.log(this.playerProfile.skillLevel);
-    if (this.currentGolfHole != null) {
-      console.log(`Current golf hole: ${this.currentGolfHole.holeId}`);
+    if (this.swingCount === undefined) {
+      this.swingCount = 1;
     }
-    this.isGolfHole = this.router.url.indexOf("golfhole") > 0;
+    // subscription to player profile service to detect changes
+    this.subscription = this.playerProfileService.subscribePlayerProfile().subscribe(profile => {
+      this.playerProfile = profile;
+      this.practiceSession = this.playerProfile.practiceSession;
+    });
+
+    this.isGolfHole = this.router.url.indexOf('golfhole') > 0;
+  }
+
+  goToShotResult() {
+    this.router.navigate(['../shotresult', this.practiceSession.golfHole.holeId, this.swingCount]);
+  }
+
+  onSwing(swingCount: number) {
+    swingCount ? this.swingCount = swingCount : this.swingCount = 1;
+    this.practiceSession.swingCount = this.swingCount;
+  }
+
+  ngOnDestroy(): void {
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
   }
 }

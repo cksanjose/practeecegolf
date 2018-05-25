@@ -1,4 +1,8 @@
+import { PracticeSession } from './practiceSession';
+
 export class PlayerProfile {
   playerProfileId: number;
-  skillLevel: string;
+  skillLevelId: number;
+  skillLevelDescription: string;
+  practiceSession: PracticeSession;
 }

@@ -28,7 +28,7 @@ const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'practice', component: PracticeComponent },
   { path: 'golfhole', component: GolfHoleComponent },
-  { path: 'shotresult', component: ShotResultComponent },
+  { path: 'shotresult/:holeId/:swingCount', component: ShotResultComponent },
   { path: 'practiceclub', component: PracticeClubComponent },
   { path: '**', component: PathNotFoundComponent }
 ];

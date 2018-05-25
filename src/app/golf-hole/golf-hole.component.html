@@ -1,6 +1,5 @@
-<app-practice-header></app-practice-header>
-<form [formGroup]="golfHoleForm" novalidate>
-  <div class="container">
+<app-practice-header (swingCountEvent)="onSwing($event)"></app-practice-header>
+  <div *ngIf="currentGolfHole" class="container">
       <div class="row">
         <div><label>Hole Id</label></div>
         <div>{{currentGolfHole.holeId}}</div>
@@ -26,5 +25,4 @@
         <div>{{currentGolfHole.hazard}}</div>
       </div>
     </div>
-</form>
-<app-practice-nav [currentGolfHole]="currentGolfHole"></app-practice-nav>
+<app-practice-nav (swingCountEvent)="onSwing($event)"></app-practice-nav>
