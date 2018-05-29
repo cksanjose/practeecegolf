@@ -3,8 +3,8 @@ import { ShotResult } from '../../shared/shotResult';
 
 export class Par3ShotResultEngine extends BaseShotResultEngine {
   public determineShotResult(skillLevel: number, swingCount: number): ShotResult {
-      if (skillLevel === 3 && swingCount >= 2) {
-          // advanced players with swing count of 2 or greater, gets ball on green result
+      if ((skillLevel === 2 && swingCount >= 3) || (skillLevel === 3 && swingCount >= 2)) {
+          // int/advanced players with swing count of 2 or greater, gets ball on green result
           this.shotResult = this.shotResults.find(s => s.shotResultId === 4);
       } else {
           this.filteredShotResults = this.shotResults.filter(s => s.option.filter(o => o.par === 3
