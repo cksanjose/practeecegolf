@@ -2,7 +2,7 @@ import { BaseShotResultEngine } from './base-shot-result-engine';
 import { ShotResult } from '../../shared/shotResult';
 
 export class Par3ShotResultEngine extends BaseShotResultEngine {
-  public determineShotResult(skillLevel: number, swingCount: number): ShotResult {
+  public determineShotResult(skillLevel: number, swingCount: number, previousShotResultId: number): ShotResult {
       if ((skillLevel === 1 && swingCount >= 4) || (skillLevel === 2 && swingCount >= 3) || (skillLevel === 3 && swingCount >= 2)) {
           this.shotResult = this.shotResults.find(s => s.shotResultId === 4);
       } else {

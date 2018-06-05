@@ -37,7 +37,9 @@ export class ShotResultComponent implements OnInit, OnDestroy {
 
     this.shotResult = this.shotResultService
       .getShotResult(this.playerProfile.practiceSession.golfHole,
-        this.playerProfile.practiceSession.swingCount, this.playerProfile.skillLevelId);
+        this.playerProfile.practiceSession.swingCount, this.playerProfile.skillLevelId, this.playerProfile.practiceSession.previousShotResult.shotResultId);
+
+    this.playerProfile.practiceSession.previousShotResult = this.shotResult;
   }
 
   ngOnDestroy(): void {

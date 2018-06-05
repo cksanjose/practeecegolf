@@ -245,7 +245,8 @@
         "shotCount": 4,
         "skillLevel": [1,2]
       }
-    ]
+    ],
+    "childResult": [7, 9]
   },
   {
     "shotResultId": 7,
@@ -288,7 +289,8 @@
         "shotCount": 4,
         "skillLevel": [1,2]
       }
-    ]
+    ],
+    "childResult": [6, 9]
   },
   {
     "shotResultId": 8,

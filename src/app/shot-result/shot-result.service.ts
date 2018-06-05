@@ -21,23 +21,23 @@ export class ShotResultService {
     return this._http.get<ShotResult[]>(this._dataUrl + 'shotresults.json')
   }
 
-  getShotResult(golfHole: GolfHole, swing: number, skillLevel: number): ShotResult {
+  getShotResult(golfHole: GolfHole, swing: number, skillLevel: number, previousShotResultId: number): ShotResult {
 
     switch (golfHole.par) {
       case 3:
         this.shotResultEngine = new Par3ShotResultEngine();
         this.shotResultEngine.shotResults = shotResults.default;
-        return this.shotResultEngine.determineShotResult(skillLevel, swing);
+        return this.shotResultEngine.determineShotResult(skillLevel, swing, previousShotResultId);
 
       case 4:
         this.shotResultEngine = new Par4ShotResultEngine();
         this.shotResultEngine.shotResults = shotResults.default;
-        return this.shotResultEngine.determineShotResult(skillLevel, swing);
+        return this.shotResultEngine.determineShotResult(skillLevel, swing, previousShotResultId);
 
       case 5:
         this.shotResultEngine = new Par5ShotResultEngine();
         this.shotResultEngine.shotResults = shotResults.default;
-        return this.shotResultEngine.determineShotResult(skillLevel, swing);
+        return this.shotResultEngine.determineShotResult(skillLevel, swing, previousShotResultId);
     }
     // if par is 3 and swing is 1,
     // skill is adv/int then ball on green, ball in rough near green
