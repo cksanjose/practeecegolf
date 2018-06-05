@@ -2,8 +2,10 @@ import {BaseShotResultEngine} from './base-shot-result-engine';
 import { ShotResult } from '../../shared/shotResult';
 
 export class Par5ShotResultEngine extends BaseShotResultEngine {
-    public determineShotResult(skillLevel: number, swingCount: number, previousShotResultId: number): ShotResult {
-      if ((skillLevel === 1 && swingCount >= 5) || (skillLevel === 2 && swingCount >= 4) || (skillLevel === 3 && swingCount > 3)) {
+    public determineShotResult(skillLevel: number, swingCount: number, previousShotResultId?: number): ShotResult {
+      if (previousShotResultId) {
+
+      } else if ((skillLevel === 1 && swingCount >= 5) || (skillLevel === 2 && swingCount >= 4) || (skillLevel === 3 && swingCount > 3)) {
           // int/advanced players with swing count of 4 or greater, gets ball on green result
           this.shotResult = this.shotResults.find(s => s.shotResultId === 4);
       } else {
