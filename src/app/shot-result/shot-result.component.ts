@@ -35,9 +35,14 @@ export class ShotResultComponent implements OnInit, OnDestroy {
       this.playerProfileService.playerProfileUpdate(this.playerProfile);
     });
 
+    let shotResultId;
+    if (this.playerProfile.practiceSession.previousShotResult) {
+      shotResultId = this.playerProfile.practiceSession.previousShotResult.shotResultId;
+    }
+
     this.shotResult = this.shotResultService
       .getShotResult(this.playerProfile.practiceSession.golfHole,
-        this.playerProfile.practiceSession.swingCount, this.playerProfile.skillLevelId, this.playerProfile.practiceSession.previousShotResult.shotResultId);
+        this.playerProfile.practiceSession.swingCount, this.playerProfile.skillLevelId, shotResultId);
 
     this.playerProfile.practiceSession.previousShotResult = this.shotResult;
   }
