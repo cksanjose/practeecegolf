@@ -39,6 +39,11 @@
         "par": 5,
         "shotCount": 3,
         "skillLevel": [1,2]
+      },
+      {
+        "par": 5,
+        "shotCount": 4,
+        "skillLevel": [1]
       }
     ],
     "childResult": null
@@ -83,6 +88,11 @@
         "par": 5,
         "shotCount": 3,
         "skillLevel": [1,2]
+      },
+      {
+        "par": 5,
+        "shotCount": 4,
+        "skillLevel": [1]
       }
     ],
     "childResult": null
@@ -127,6 +137,11 @@
         "par": 5,
         "shotCount": 3,
         "skillLevel": [1,2]
+      },
+      {
+        "par": 5,
+        "shotCount": 4,
+        "skillLevel": [1,2]
       }
     ],
     "childResult": [1, 11, 12]
@@ -165,7 +180,7 @@
       {
         "par": 5,
         "shotCount": 4,
-        "skillLevel": [2]
+        "skillLevel": [1,2]
       }
     ],
     "childResult": null
@@ -194,7 +209,7 @@
       {
         "par": 5,
         "shotCount": 2,
-        "skillLevel": [3]
+        "skillLevel": [2,3]
       },
       {
         "par": 5,
@@ -300,13 +315,13 @@
   {
     "shotResultId": 8,
     "shotType": "Rough",
-    "result": "Ball in the first cut rough",
+    "result": "Ball in the first cut rough of the fairway",
     "distanceToGreen": 0,
     "option": [
       {
         "par": 3,
         "shotCount": 1,
-        "skillLevel": [1]
+        "skillLevel": [1,2]
       },
       {
         "par": 4,
