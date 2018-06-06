@@ -40,7 +40,8 @@
         "shotCount": 3,
         "skillLevel": [1,2]
       }
-    ]
+    ],
+    "childResult": null
   },
   {
     "shotResultId": 2,
@@ -83,7 +84,8 @@
         "shotCount": 3,
         "skillLevel": [1,2]
       }
-    ]
+    ],
+    "childResult": null
   },
   {
     "shotResultId": 3,
@@ -126,7 +128,8 @@
         "shotCount": 3,
         "skillLevel": [1,2]
       }
-    ]
+    ],
+    "childResult": [1, 11, 12]
   },
   {
     "shotResultId": 4,
@@ -147,24 +150,25 @@
       {
         "par": 4,
         "shotCount": 3,
-        "skillLevel": [1,2]
-      },
-      {
-        "par": 5,
-        "shotCount": 2,
         "skillLevel": [2,3]
       },
       {
         "par": 5,
+        "shotCount": 2,
+        "skillLevel": [3]
+      },
+      {
+        "par": 5,
         "shotCount": 3,
-        "skillLevel": [1,2]
+        "skillLevel": [2,3]
       },
       {
         "par": 5,
         "shotCount": 4,
-        "skillLevel": [1,2]
+        "skillLevel": [2]
       }
-    ]
+    ],
+    "childResult": null
   },
   {
     "shotResultId": 5,
@@ -202,7 +206,8 @@
         "shotCount": 4,
         "skillLevel": [1]
       }
-    ]
+    ],
+    "childResult": null
   },
   {
     "shotResultId": 6,
@@ -272,7 +277,7 @@
       {
         "par": 4,
         "shotCount": 3,
-        "skillLevel": [1,2]
+        "skillLevel": [2,3]
       },
       {
         "par": 5,
@@ -282,12 +287,12 @@
       {
         "par": 5,
         "shotCount": 3,
-        "skillLevel": [1,2]
+        "skillLevel": [2,3]
       },
       {
         "par": 5,
         "shotCount": 4,
-        "skillLevel": [1,2]
+        "skillLevel": [2]
       }
     ],
     "childResult": [6, 9]
@@ -328,7 +333,8 @@
         "shotCount": 4,
         "skillLevel": [1]
       }
-    ]
+    ],
+    "childResult": null
   },
   {
     "shotResultId": 9,
@@ -354,7 +360,7 @@
       {
         "par": 4,
         "shotCount": 3,
-        "skillLevel": [1,2,3]
+        "skillLevel": [2,3]
       },
       {
         "par": 4,
@@ -381,7 +387,8 @@
         "shotCount": 5,
         "skillLevel": [1]
       }
-    ]
+    ],
+    "childResult": null
   },
   {
     "shotResultId": 10,
@@ -394,7 +401,8 @@
         "shotCount": 1,
         "skillLevel": [1,2,3]
       }
-    ]
+    ],
+    "childResult": null
   },
   {
     "shotResultId": 11,
@@ -432,7 +440,8 @@
         "shotCount": 4,
         "skillLevel": [1,2]
       }
-    ]
+    ],
+    "childResult": null
   },
   {
     "shotResultId": 12,
@@ -470,7 +479,8 @@
         "shotCount": 4,
         "skillLevel": [1,2]
       }
-    ]
+    ],
+    "childResult": null
   },
   {
     "shotResultId": 13,
@@ -508,7 +518,8 @@
         "shotCount": 4,
         "skillLevel": [1,2]
       }
-    ]
+    ],
+    "childResult": null
   },
   {
     "shotResultId": 14,
@@ -546,7 +557,8 @@
         "shotCount": 4,
         "skillLevel": [1,2]
       }
-    ]
+    ],
+    "childResult": null
   },
   {
     "shotResultId": 15,
@@ -584,6 +596,7 @@
         "shotCount": 4,
         "skillLevel": [1,2,3]
       }
-    ]
+    ],
+    "childResult": null
   }
 ]

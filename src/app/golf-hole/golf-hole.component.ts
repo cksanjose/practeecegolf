@@ -27,7 +27,7 @@ export class GolfHoleComponent implements OnInit, OnDestroy {
     this.golfHoleService.getGolfHoles().subscribe(holes => {
       this.golfHoles = holes;
       const filteredGolfHoles = holes.filter(g => g.skill === this.playerProfile.skillLevelId);
-      const idx = Math.floor(Math.random() * filteredGolfHoles.length);
+      const idx = Math.floor(Math.random() * Math.floor(filteredGolfHoles.length));
       this.currentGolfHole = filteredGolfHoles[idx];
       this.playerProfile.practiceSession.golfHole = this.currentGolfHole;
       console.log(this.currentGolfHole);
