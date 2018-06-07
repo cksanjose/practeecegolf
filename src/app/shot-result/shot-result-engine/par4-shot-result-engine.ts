@@ -6,6 +6,7 @@ export class Par4ShotResultEngine extends BaseShotResultEngine {
     if (previousShotResultId) {
       this.shotResult = this.getChildShotResult(previousShotResultId);
     }
+    // no previous shot result or previous shot result does not have child shot result, then find a shot result
     if (!this.shotResult) {
       if ((skillLevel === 1 && swingCount >= 4) || (skillLevel === 2 && swingCount >= 3) || (skillLevel === 3 && swingCount >= 2)) {
         this.shotResult = this.shotResults.find(s => s.shotResultId === 4);

@@ -6,6 +6,7 @@ export class Par5ShotResultEngine extends BaseShotResultEngine {
     if (previousShotResultId) {
       this.shotResult = this.getChildShotResult(previousShotResultId);
     }
+    // no previous shot result or previous shot result does not have child shot result, then find a shot result
     if (!this.shotResult) {
       if ((skillLevel === 1 && swingCount >= 5) || (skillLevel === 2 && swingCount >= 4) || (skillLevel === 3 && swingCount > 3)) {
         // int/advanced players with swing count of 4 or greater, gets ball on green result
