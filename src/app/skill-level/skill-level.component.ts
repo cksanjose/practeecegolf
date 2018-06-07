@@ -15,6 +15,7 @@ export class SkillLevelComponent implements OnInit, OnDestroy {
   private skillLevelsForm: FormGroup;
   private playerProfile: PlayerProfile;
   private subscription: Subscription;
+  private skillLevelSelected: boolean;
 
   constructor(private skillLevelService: SkillLevelService, private playerProfileService: PlayerProfileService) {
     this.playerProfile = this.playerProfileService.getPlayerProfile();
@@ -39,6 +40,7 @@ export class SkillLevelComponent implements OnInit, OnDestroy {
     this.playerProfile.skillLevelDescription = this.skillLevels[entry - 1].description;
     this.playerProfile.skillLevelId = entry;
     this.playerProfileService.playerProfileUpdate(this.playerProfile);
+    this.skillLevelSelected = true;
   }
 
   ngOnDestroy(): void {
