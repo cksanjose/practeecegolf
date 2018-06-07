@@ -104,7 +104,7 @@
     "shotType": "Chip Out",
     "result": "Ball in the trees",
     "distanceToGreen": 0,
-    "comment": "Practice chipping out with low trajectory shot",
+    "comment": "Practice chipping out with low trajectory shot. A long iron or hybrid is a good club to use.",
     "option": [
       {
         "par": 3,
@@ -154,7 +154,7 @@
     "shotType": "Putt",
     "result": "Ball on the green",
     "distanceToGreen": 0,
-    "comment": "You're on the dance floor!",
+    "comment": "Great job!",
     "option": [
       {
         "par": 3,
@@ -279,7 +279,7 @@
     "shotType": "Chip",
     "result": "Ball in the green-side rough",
     "distanceToGreen": 0,
-    "comment": "Use your best club to stick it close to the hole",
+    "comment": "Use your best club to stick it close to the hole. Pick a target where you want the ball to land.",
     "option": [
       {
         "par": 3,
