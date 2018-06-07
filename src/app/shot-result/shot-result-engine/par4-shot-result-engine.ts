@@ -10,7 +10,8 @@ export class Par4ShotResultEngine extends BaseShotResultEngine {
       if ((skillLevel === 1 && swingCount >= 4) || (skillLevel === 2 && swingCount >= 3) || (skillLevel === 3 && swingCount >= 2)) {
         this.shotResult = this.shotResults.find(s => s.shotResultId === 4);
       } else {
-        this.filteredShotResults = this.shotResults.filter(s => s.option.filter(o => o.par === 4 && o.shotCount === swingCount));
+        this.filteredShotResults = this.shotResults.filter(s => s.option.filter(o => o.par === 4
+          && o.shotCount === swingCount && o.skillLevel.indexOf(skillLevel) >= 0).length > 0);
 
         if (previousShotResultId) {
           this.filteredShotResults = this.filteredShotResults.filter(s => s.shotResultId !== previousShotResultId);
