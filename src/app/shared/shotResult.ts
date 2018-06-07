@@ -7,4 +7,5 @@ export class ShotResult {
   distanceToGreen: number;
   option: ShotOption[];
   childResult: number[];
+  comment: string;
 }
