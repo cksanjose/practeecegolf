@@ -147,7 +147,7 @@
         "skillLevel": [1,2]
       }
     ],
-    "childResult": [1, 11, 12]
+    "childResult": [1, 2, 11, 12, 13, 14]
   },
   {
     "shotResultId": 4,
@@ -272,7 +272,7 @@
         "skillLevel": [1,2]
       }
     ],
-    "childResult": [7, 9]
+    "childResult": [4, 7, 9]
   },
   {
     "shotResultId": 7,
@@ -317,7 +317,7 @@
         "skillLevel": [2]
       }
     ],
-    "childResult": [6, 9]
+    "childResult": [4, 6, 9]
   },
   {
     "shotResultId": 8,
