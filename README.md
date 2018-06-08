@@ -11,10 +11,10 @@ This is a progressive web application built using Angular 6 and Angular Material
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## To debug service work, use http-server. (ng serve doesn't support service worker)
-    * Download install http-server (npm install http-server -g) 
-    * Open terminal/command window. Change working directory to dist/practeecegolf.
-    * Run "http-server -p4600" to serve from port 4600.
-    * Open the web browser and go to: http://localhost:4600 
+  * Download install http-server (npm install http-server -g) 
+  * Open terminal/command window. Change working directory to dist/practeecegolf.
+  * Run "http-server -p4600" to serve from port 4600.
+  * Open the web browser and go to: http://localhost:4600 
 
 ## Code scaffolding
 
