@@ -20,6 +20,21 @@ $candy-app-theme: mat-light-theme(
   @include angular-material-theme($theme-dark);
 }
 
+.button-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.spacer {
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+
+.container {
+  margin: 15px;
+}
+
 body {
   margin: 0;
 }

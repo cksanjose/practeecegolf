@@ -1,5 +1,15 @@
 <app-practice-header></app-practice-header>
-<p>
-  shot-result works!
-</p>
-<app-practice-nav [currentGolfHole]="currentGolfHole"></app-practice-nav>
+<div class="spacer"></div>
+  <div *ngIf="shotResult" class="container">
+    <div class="row mat-typography">
+      <strong>Shot Result:</strong>&nbsp;{{shotResult.result}}
+    </div>
+    <div class="row mat-typography">
+      <strong>Type:</strong>&nbsp;{{shotResult.shotType}}
+    </div>
+    <div class="row mat-typography">
+      <strong>Comment:</strong>&nbsp;{{shotResult.comment}}
+    </div>
+  </div>
+<div class="spacer"></div>
+<app-practice-nav></app-practice-nav>

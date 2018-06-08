@@ -1,30 +1,18 @@
 <app-practice-header></app-practice-header>
-<form [formGroup]="golfHoleForm" novalidate>
-  <div class="container">
+<div class="spacer"></div>
+  <div *ngIf="currentGolfHole" class="container mat-typography">
       <div class="row">
-        <div><label>Hole Id</label></div>
-        <div>{{currentGolfHole.holeId}}</div>
+        <label>Par:</label>&nbsp;{{currentGolfHole.par}}
       </div>
       <div class="row">
-        <div><label>Skill Level</label></div>
-        <div>{{currentGolfHole.skill}}</div>
+        <label>Distance:</label>&nbsp;{{currentGolfHole.distance}}
       </div>
       <div class="row">
-        <div><label>Par</label></div>
-        <div>{{currentGolfHole.par}}</div>
+        <label>Ave Swings To Green:</label>&nbsp;{{currentGolfHole.averageSwingsToGreen}}
       </div>
       <div class="row">
-        <div><label>Distance</label></div>
-        <div>{{currentGolfHole.distance}}</div>
+        <label>Hazard(s):</label>&nbsp;{{currentGolfHole.hazard}}
       </div>
-      <div class="row">
-        <div><label>Ave Swings To Green</label></div>
-        <div>{{currentGolfHole.averageSwingsToGreen}}</div>
-      </div>
-      <div class="row">
-        <div><label>Hazard(s)</label></div>
-        <div>{{currentGolfHole.hazard}}</div>
-      </div>
-    </div>
-</form>
-<app-practice-nav [currentGolfHole]="currentGolfHole"></app-practice-nav>
+  </div>
+<div class="spacer"></div>
+<app-practice-nav></app-practice-nav>

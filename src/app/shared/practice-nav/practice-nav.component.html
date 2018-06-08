@@ -1,12 +1,14 @@
-<p *ngIf="!isGolfHole">
-  <a routerLink="../golfhole"><button>Next Hole</button></a>
-</p>
-<p *ngIf="isGolfHole">
-  <a routerLink="../shotresult"><button>View Results</button></a>
-</p>
-<p>
-  <a routerLink="../practiceclub"><button>Practice a club</button></a>
-</p>
-<p>
-  <a routerLink="../practice"><button>Start Over</button></a>
-</p>
+<mat-toolbar>
+  <p>
+    <a routerLink="/golfhole"><button>Next Hole</button></a>&nbsp;
+  </p>
+  <p>
+    <button (click)="goToShotResult()">View Result</button>&nbsp;
+  </p>
+  <p hidden="true">
+    <a routerLink="/practiceclub"><button>Practice a club</button></a>&nbsp;
+  </p>
+  <p>
+    <a routerLink="/practice"><button>Start Over</button></a>
+  </p>
+</mat-toolbar>

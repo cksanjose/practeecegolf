@@ -2,16 +2,17 @@
   <div class="container">
     <div class="row">
       <div col form-group>
-        <div form-control-label>Skill Levels</div>
-        <div class="checkbox checkbox-primary" *ngFor="let skillLevel of skillLevels;let i=index;">
-            <input type="radio" id="skillLevel{{i}}" name="skillLevel"
-                   [value]="skillLevel.skillLevelId" (change)="onSkillLevelChanged(skillLevel.skillLevelId)" />{{skillLevel.description}}
-        </div>
-        <div>Selected Skill Level: {{playerProfile.skillLevel}}</div>
+        <div form-control-label class="mat-typography">Skill Levels</div>
+        <mat-radio-group>
+          <div class="mat-typography checkbox checkbox-primary" *ngFor="let skillLevel of skillLevels;let i=index;">
+            <mat-radio-button id="skillLevel{{i}}" name="skillLevel"
+                     [value]="skillLevel.skillLevelId" (change)="onSkillLevelChanged(skillLevel.skillLevelId)">{{skillLevel.description}}</mat-radio-button>
+          </div>
+        </mat-radio-group>
       </div>
     </div>
     <div>
-      <a routerLink="../golfhole"><button mat-button color="primary">Start
+      <a routerLink="../golfhole"><button mat-button color="primary" [disabled]="!skillLevelSelected">Start
       </button></a>
     </div>
   </div>

@@ -1,42 +1,48 @@
-import { Component, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
 import { GolfHoleService } from './golf-hole.service';
 import { GolfHole } from '../shared/golfHole';
 import { PlayerProfile } from '../shared/playerProfile';
 import { PlayerProfileService } from '../shared/player-profile.service';
-import { FormGroup } from '@angular/forms';
+import { Subscription } from 'rxjs/internal/Subscription';
 
 @Component({
   selector: 'app-golf-hole',
   templateUrl: './golf-hole.component.html'
 })
-export class GolfHoleComponent implements OnInit {
+export class GolfHoleComponent implements OnInit, OnDestroy {
   private golfHoles: GolfHole[];
-  private playerProfile: PlayerProfile;
-  private golfHoleForm: FormGroup;
-
-  @Output() currentGolfHole: GolfHole
+  private readonly playerProfile: PlayerProfile;
+  private currentGolfHole: GolfHole;
+  private subscription: Subscription;
 
   constructor(private golfHoleService: GolfHoleService,
-              private playerProfileService: PlayerProfileService) { }
+              private playerProfileService: PlayerProfileService) {
 
-  ngOnInit(): FormGroup {
-
-    this.currentGolfHole = new GolfHole();
-    this.golfHoleForm = new FormGroup({
-
-    });
-
+    // subscription to player profile service to detect changes
     this.playerProfile = this.playerProfileService.getPlayerProfile();
+  }
+
+  ngOnInit() {
 
     this.golfHoleService.getGolfHoles().subscribe(holes => {
       this.golfHoles = holes;
-      const filteredGolfHoles = holes.filter(g => g.skill === this.playerProfile.skillLevel);
-      const idx = Math.floor(Math.random() * filteredGolfHoles.length);
+      const filteredGolfHoles = holes.filter(g => g.skill === this.playerProfile.skillLevelId);
+      const idx = Math.floor(Math.random() * Math.floor(filteredGolfHoles.length));
       this.currentGolfHole = filteredGolfHoles[idx];
+      this.playerProfile.practiceSession.golfHole = this.currentGolfHole;
+      console.log(this.currentGolfHole);
     });
 
+    // emit swing count so practice nav knows about it
+    this.playerProfile.practiceSession.swingCount = 0;
+    this.playerProfile.practiceSession.previousShotResult = null;
+    this.playerProfileService.playerProfileUpdate(this.playerProfile);
+  }
 
-    return this.golfHoleForm;
+  ngOnDestroy(): void {
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
   }
 
 }

@@ -1,30 +1,52 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { ShotResult } from "../shotResult";
-import { PlayerProfile } from "../playerProfile";
-import { GolfHole } from "../golfHole";
-import { PlayerProfileService } from "../player-profile.service";
-import { Router } from "@angular/router";
+import {Component, Input, OnDestroy, OnInit} from '@angular/core';
+import { PlayerProfile } from '../playerProfile';
+import { PlayerProfileService } from '../player-profile.service';
+import { Router } from '@angular/router';
+import { PracticeSession } from '../practiceSession';
+import { Subscription } from 'rxjs/internal/Subscription';
 
 @Component({
   selector: 'app-practice-nav',
   templateUrl: './practice-nav.component.html'
 })
-export class PracticeNavComponent implements OnInit {
+export class PracticeNavComponent implements OnInit, OnDestroy {
 
-  @Input() currentGolfHole: GolfHole;
-
-  playerProfile: PlayerProfile;
-  isGolfHole: boolean;
+  private playerProfile: PlayerProfile;
+  private practiceSession: PracticeSession;
+  private isGolfHole: boolean;
+  private swingCount: number;
+  private readonly subscription: Subscription;
 
   constructor(private playerProfileService: PlayerProfileService,
-              private router: Router) { }
+              private router: Router) {
+
+    // subscription to player profile service to detect changes
+    this.playerProfile = this.playerProfileService.getPlayerProfile();
+  }
 
   ngOnInit() {
-    this.playerProfile = this.playerProfileService.getPlayerProfile();
-    console.log(this.playerProfile.skillLevel);
-    if (this.currentGolfHole != null) {
-      console.log(`Current golf hole: ${this.currentGolfHole.holeId}`);
+    if (this.swingCount === undefined) {
+      this.swingCount = 1;
     }
-    this.isGolfHole = this.router.url.indexOf("golfhole") > 0;
+    this.isGolfHole = this.router.url.indexOf('golfhole') > 0;
+  }
+
+  goToShotResult() {
+    if (this.router.navigated === false) {
+      // Case when route was not used yet
+      this.router.navigate(['../shotresult', this.playerProfile.practiceSession.golfHole.holeId, this.playerProfile.practiceSession.swingCount]);
+    } else {
+      // Case when route was used once or more then route to home and then route shot result
+      this.router.navigateByUrl(`/index`).then(
+        () => {
+          this.router.navigate(['../shotresult', this.playerProfile.practiceSession.golfHole.holeId, this.playerProfile.practiceSession.swingCount]);
+        });
+    }
+  }
+
+  ngOnDestroy(): void {
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
   }
 }
