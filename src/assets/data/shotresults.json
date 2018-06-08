@@ -227,7 +227,7 @@
         "skillLevel": [1]
       }
     ],
-    "childResult": null
+    "childResult": [1, 2, 11, 12, 13, 14, 15]
   },
   {
     "shotResultId": 6,
@@ -357,7 +357,7 @@
         "skillLevel": [1]
       }
     ],
-    "childResult": null
+    "childResult": [1, 2, 11, 12, 13, 14, 15]
   },
   {
     "shotResultId": 9,

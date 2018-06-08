@@ -10,9 +10,8 @@ import { Subscription } from 'rxjs/internal/Subscription';
 })
 export class PracticeHeaderComponent implements OnInit, OnDestroy {
 
-  private playerProfile: PlayerProfile;
-  private practiceSession: PracticeSession;
-  private swingCount: number;
+  public playerProfile: PlayerProfile;
+  public practiceSession: PracticeSession;
   private readonly subscription: Subscription;
 
   constructor(private playerProfileService: PlayerProfileService) {

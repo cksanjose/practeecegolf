@@ -6,7 +6,9 @@
         <mat-radio-group>
           <div class="mat-typography checkbox checkbox-primary" *ngFor="let skillLevel of skillLevels;let i=index;">
             <mat-radio-button id="skillLevel{{i}}" name="skillLevel"
-                     [value]="skillLevel.skillLevelId" (change)="onSkillLevelChanged(skillLevel.skillLevelId)">{{skillLevel.description}}</mat-radio-button>
+                     [value]="skillLevel.skillLevelId" (change)="onSkillLevelChanged(skillLevel.skillLevelId)">{{skillLevel.description}}
+            </mat-radio-button>
+            <div class="spacer"></div>
           </div>
         </mat-radio-group>
       </div>

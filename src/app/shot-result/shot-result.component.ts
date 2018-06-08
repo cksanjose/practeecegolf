@@ -13,7 +13,7 @@ import {Subscription} from 'rxjs/internal/Subscription';
 
 export class ShotResultComponent implements OnInit, OnDestroy {
 
-  private shotResult: ShotResult;
+  public shotResult: ShotResult;
   private readonly playerProfile: PlayerProfile;
   private previousHoleId: number;
   private previousSwingCount: number;

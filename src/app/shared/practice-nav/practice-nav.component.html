@@ -1,14 +1,14 @@
 <mat-toolbar>
   <p>
-    <a routerLink="/golfhole"><button>Next Hole</button></a>&nbsp;
+    <a routerLink="/golfhole"><button mat-button color="primary">Next Hole</button></a>&nbsp;
   </p>
   <p>
-    <button (click)="goToShotResult()">View Result</button>&nbsp;
+    <button (click)="goToShotResult()" mat-button color="primary">View Result</button>&nbsp;
   </p>
   <p hidden="true">
-    <a routerLink="/practiceclub"><button>Practice a club</button></a>&nbsp;
+    <a routerLink="/practiceclub"><button mat-button color="primary">Practice a club</button></a>&nbsp;
   </p>
   <p>
-    <a routerLink="/practice"><button>Start Over</button></a>
+    <a routerLink="/practice"><button mat-button color="primary">Start Over</button></a>
   </p>
 </mat-toolbar>
