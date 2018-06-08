@@ -11,11 +11,11 @@ import { Subscription } from 'rxjs/internal/Subscription';
   templateUrl: './skill-level.component.html'
 })
 export class SkillLevelComponent implements OnInit, OnDestroy {
-  private skillLevels: ISkillLevel[];
-  private skillLevelsForm: FormGroup;
-  private playerProfile: PlayerProfile;
+  public skillLevels: ISkillLevel[];
+  public skillLevelsForm: FormGroup;
+  public playerProfile: PlayerProfile;
   private subscription: Subscription;
-  private skillLevelSelected: boolean;
+  public skillLevelSelected: boolean;
 
   constructor(private skillLevelService: SkillLevelService, private playerProfileService: PlayerProfileService) {
     this.playerProfile = this.playerProfileService.getPlayerProfile();

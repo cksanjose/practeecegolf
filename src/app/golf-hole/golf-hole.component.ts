@@ -12,7 +12,7 @@ import { Subscription } from 'rxjs/internal/Subscription';
 export class GolfHoleComponent implements OnInit, OnDestroy {
   private golfHoles: GolfHole[];
   private readonly playerProfile: PlayerProfile;
-  private currentGolfHole: GolfHole;
+  public currentGolfHole: GolfHole;
   private subscription: Subscription;
 
   constructor(private golfHoleService: GolfHoleService,
