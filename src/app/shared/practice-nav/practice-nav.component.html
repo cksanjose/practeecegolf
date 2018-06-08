@@ -2,7 +2,7 @@
   <p>
     <a routerLink="/golfhole"><button mat-button color="primary">Next Hole</button></a>&nbsp;
   </p>
-  <p>
+  <p *ngIf="!isInGreen">
     <button (click)="goToShotResult()" mat-button color="primary">View Result</button>&nbsp;
   </p>
   <p hidden="true">

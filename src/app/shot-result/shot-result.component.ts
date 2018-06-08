@@ -19,6 +19,7 @@ export class ShotResultComponent implements OnInit, OnDestroy {
   private previousSwingCount: number;
   private paramSubscribe: any;
   private subscription: Subscription;
+  private ballOnGreenShotResults: number[] = [4, 9, 10];
 
   constructor(private playerProfileService: PlayerProfileService,
               private shotResultService: ShotResultService,
@@ -43,6 +44,8 @@ export class ShotResultComponent implements OnInit, OnDestroy {
     this.shotResult = this.shotResultService
       .getShotResult(this.playerProfile.practiceSession.golfHole,
         this.playerProfile.practiceSession.swingCount, this.playerProfile.skillLevelId, shotResultId);
+
+    this.playerProfile.practiceSession.isInGreen = this.ballOnGreenShotResults.indexOf(this.shotResult.shotResultId) >= 0;
 
     this.playerProfile.practiceSession.previousShotResult = this.shotResult;
   }

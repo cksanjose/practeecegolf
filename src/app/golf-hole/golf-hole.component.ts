@@ -14,6 +14,7 @@ export class GolfHoleComponent implements OnInit, OnDestroy {
   private readonly playerProfile: PlayerProfile;
   public currentGolfHole: GolfHole;
   private subscription: Subscription;
+  public isInGreen: boolean;
 
   constructor(private golfHoleService: GolfHoleService,
               private playerProfileService: PlayerProfileService) {
@@ -23,7 +24,7 @@ export class GolfHoleComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-
+    this.playerProfile.practiceSession.isInGreen = false;
     this.golfHoleService.getGolfHoles().subscribe(holes => {
       this.golfHoles = holes;
       const filteredGolfHoles = holes.filter(g => g.skill === this.playerProfile.skillLevelId);

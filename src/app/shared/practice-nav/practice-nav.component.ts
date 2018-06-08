@@ -12,10 +12,10 @@ import { Subscription } from 'rxjs/internal/Subscription';
 export class PracticeNavComponent implements OnInit, OnDestroy {
 
   private playerProfile: PlayerProfile;
-  private practiceSession: PracticeSession;
   private isGolfHole: boolean;
   private swingCount: number;
   private readonly subscription: Subscription;
+  public isInGreen: boolean;
 
   constructor(private playerProfileService: PlayerProfileService,
               private router: Router) {
@@ -28,6 +28,7 @@ export class PracticeNavComponent implements OnInit, OnDestroy {
     if (this.swingCount === undefined) {
       this.swingCount = 1;
     }
+    this.isInGreen = this.playerProfile.practiceSession.isInGreen;
     this.isGolfHole = this.router.url.indexOf('golfhole') > 0;
   }
 
