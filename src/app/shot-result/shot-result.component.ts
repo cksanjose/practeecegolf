@@ -3,15 +3,16 @@ import { PlayerProfileService } from '../shared/player-profile.service';
 import { ShotResultService } from './shot-result.service';
 import { ShotResult } from '../shared/shotResult';
 import { PlayerProfile } from '../shared/playerProfile';
-import { ActivatedRoute } from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {Subscription} from 'rxjs/internal/Subscription';
+import {BaseComponent} from '../shared/base-component';
 
 @Component({
   selector: 'app-shot-result',
   templateUrl: './shot-result.component.html'
 })
 
-export class ShotResultComponent implements OnInit, OnDestroy {
+export class ShotResultComponent extends BaseComponent  implements OnInit, OnDestroy {
 
   public shotResult: ShotResult;
   private readonly playerProfile: PlayerProfile;
@@ -23,11 +24,17 @@ export class ShotResultComponent implements OnInit, OnDestroy {
 
   constructor(private playerProfileService: PlayerProfileService,
               private shotResultService: ShotResultService,
-              private route: ActivatedRoute) {
+              private route: ActivatedRoute,
+              private router: Router) {
+
+    super(router);
     this.playerProfile = this.playerProfileService.getPlayerProfile();
   }
 
   ngOnInit() {
+    if (!this.playerProfile.practiceSession) {
+      this.goToHome();
+    }
 
     this.paramSubscribe = this.route.params.subscribe(params => {
       this.previousHoleId = +params['holeId'];
