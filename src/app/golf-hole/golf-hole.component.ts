@@ -4,26 +4,34 @@ import { GolfHole } from '../shared/golfHole';
 import { PlayerProfile } from '../shared/playerProfile';
 import { PlayerProfileService } from '../shared/player-profile.service';
 import { Subscription } from 'rxjs/internal/Subscription';
+import { BaseComponent } from '../shared/base-component';
+import { Router} from '@angular/router';
 
 @Component({
   selector: 'app-golf-hole',
   templateUrl: './golf-hole.component.html'
 })
-export class GolfHoleComponent implements OnInit, OnDestroy {
+export class GolfHoleComponent extends BaseComponent implements OnInit, OnDestroy {
   private golfHoles: GolfHole[];
   private readonly playerProfile: PlayerProfile;
   public currentGolfHole: GolfHole;
   private subscription: Subscription;
+  public isInGreen: boolean;
 
   constructor(private golfHoleService: GolfHoleService,
-              private playerProfileService: PlayerProfileService) {
+              private playerProfileService: PlayerProfileService,
+              private router: Router) {
 
+    super(router);
     // subscription to player profile service to detect changes
     this.playerProfile = this.playerProfileService.getPlayerProfile();
   }
 
   ngOnInit() {
-
+    if (!this.playerProfile.practiceSession) {
+      this.goToHome();
+    }
+    this.playerProfile.practiceSession.isInGreen = false;
     this.golfHoleService.getGolfHoles().subscribe(holes => {
       this.golfHoles = holes;
       const filteredGolfHoles = holes.filter(g => g.skill === this.playerProfile.skillLevelId);

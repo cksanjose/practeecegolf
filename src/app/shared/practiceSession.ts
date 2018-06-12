@@ -5,6 +5,7 @@ export class PracticeSession {
   golfHole: GolfHole;
   swingCount: number;
   previousShotResult: ShotResult;
+  isInGreen: boolean;
 
   constructor() {
     this.golfHole = new GolfHole();
