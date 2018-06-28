@@ -9,7 +9,9 @@ describe('PracticeNavComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-        PracticeNavComponent,
+        PracticeNavComponent
+      ],
+      imports: [
         RouterTestingModule ]
     })
     .compileComponents();

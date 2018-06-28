@@ -1,8 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PracticeClubComponent } from './practice-club.component';
-import {PracticeHeaderComponent} from '../shared/practice-header/practice-header.component';
-import {PlayerProfileService} from '../shared/player-profile.service';
+import { PracticeHeaderComponent } from '../shared/practice-header/practice-header.component';
+import { PlayerProfileService } from '../shared/player-profile.service';
 
 describe('PracticeClubComponent', () => {
   let component: PracticeClubComponent;
