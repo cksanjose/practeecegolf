@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PracticeClubComponent } from './practice-club.component';
+import { PracticeHeaderComponent } from '../shared/practice-header/practice-header.component';
+import { PlayerProfileService } from '../shared/player-profile.service';
 
 describe('PracticeClubComponent', () => {
   let component: PracticeClubComponent;
@@ -8,7 +10,10 @@ describe('PracticeClubComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PracticeClubComponent ]
+      declarations: [ PracticeClubComponent,
+        PracticeHeaderComponent,
+        PlayerProfileService
+      ]
     })
     .compileComponents();
   }));
